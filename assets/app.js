@@ -14,7 +14,11 @@
   };
 
   function t(key) { return UI[state.lang][key]; }
-  function tx(zh, en) { return state.lang === "zh" ? zh : en; }
+  function tx(zh, en, ja, ko) {
+    const map = { zh, en, ja, ko };
+    const val = map[state.lang];
+    return val !== undefined && val !== null ? val : (en !== undefined ? en : zh);
+  }
 
   /* ---------- synonym-aware fuzzy search ---------- */
 
@@ -152,7 +156,10 @@
     search: '<svg class="search-icon" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M17 17l-3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
     chevron: '<svg class="mm-caret" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     arrow: '<svg class="qa-option-arrow" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    empty: '<svg class="empty-state-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="22" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 16h28" stroke="currentColor" stroke-width="2"/><path d="M13 24h6M13 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+    empty: '<svg class="empty-state-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="22" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 16h28" stroke="currentColor" stroke-width="2"/><path d="M13 24h6M13 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    logo: '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 7l8 9 8-9M16 16v9" stroke="#15130e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
+    menu: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    globe: '<svg viewBox="0 0 20 20" width="18" height="18" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 10h15M10 2.5c2.2 2 2.2 13 0 15M10 2.5c-2.2 2-2.2 13 0 15" stroke="currentColor" stroke-width="1.5"/></svg>'
   };
 
   /* ---------- header / nav ---------- */
@@ -164,22 +171,34 @@
       ["troubleshoot", t("navTrouble")],
       ["codes", t("navCodes")],
       ["videos", t("navVideos")],
+      ["learning", t("navLearning")],
       ["updates", t("navUpdates")]
     ];
     const currentTop = (location.hash.replace("#", "").split("/")[0]) || "intro";
+    const langLabels = { zh: "中文", en: "EN", ja: "日本語", ko: "한국어" };
+    const langs = ["zh", "en", "ja", "ko"];
 
     el.innerHTML = `
       <div class="header-inner">
         <a class="brand" href="#intro">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>${t("siteName")}</span>
+          ${ICONS.logo}
+          <span class="brand-word">${t("siteName").split(" ")[0].toUpperCase()}</span>
+          <span class="brand-tagline">${t("siteName").split(" ").slice(1).join(" ")}</span>
         </a>
-        <nav class="main-nav" aria-label="Main">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+          ${ICONS.menu}
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Main">
           ${routes.map(([id, label]) => `<a href="#${id}" class="${id === currentTop ? "active" : ""}">${label}</a>`).join("")}
         </nav>
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <button data-lang="zh" class="${state.lang === "zh" ? "active" : ""}">中文</button>
-          <button data-lang="en" class="${state.lang === "en" ? "active" : ""}">EN</button>
+        <div class="lang-globe-wrap">
+          <button class="lang-globe" id="lang-globe" aria-haspopup="true" aria-expanded="false">
+            ${ICONS.globe}
+            <span>${langLabels[state.lang]}</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            ${langs.map((l) => `<button data-lang="${l}" class="${state.lang === l ? "active" : ""}">${langLabels[l]}</button>`).join("")}
+          </div>
         </div>
       </div>
       <div class="search-bar">
@@ -192,14 +211,41 @@
       </div>
     `;
 
-    el.querySelectorAll(".lang-toggle button").forEach((btn) => {
+    el.querySelectorAll(".lang-dropdown button").forEach((btn) => {
       btn.addEventListener("click", () => {
         state.lang = btn.dataset.lang;
         localStorage.setItem("yarbo_lang", state.lang);
-        document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
+        document.documentElement.lang = { zh: "zh-CN", en: "en", ja: "ja", ko: "ko" }[state.lang] || "en";
         renderHeader();
         route();
       });
+    });
+
+    const globeBtn = document.getElementById("lang-globe");
+    const dropdown = document.getElementById("lang-dropdown");
+    globeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle("open");
+      globeBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      navPanel.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+
+    const navToggle = document.getElementById("nav-toggle");
+    const navPanel = document.getElementById("main-nav");
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = navPanel.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      dropdown.classList.remove("open");
+      globeBtn.setAttribute("aria-expanded", "false");
+    });
+
+    document.addEventListener("click", () => {
+      dropdown.classList.remove("open");
+      navPanel.classList.remove("open");
+      globeBtn.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-expanded", "false");
     });
 
     wireSearch();
@@ -229,8 +275,8 @@
         return `
         <button class="search-result-item" data-goto="troubleshoot/${n.categoryId}/mindmap/${gotoPath.join(".")}">
           <div class="search-result-kind">${t("navTrouble")}</div>
-          <div class="search-result-title">${escapeHtml(tx(n.node.zh, n.node.en))}</div>
-          <div class="search-result-path">${escapeHtml(tx(cat.zh, cat.en))}</div>
+          <div class="search-result-title">${escapeHtml(tx(n.node.zh, n.node.en, n.node.ja, n.node.ko))}</div>
+          <div class="search-result-path">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko))}</div>
         </button>`;
       }).join("");
 
@@ -265,7 +311,7 @@
   function renderIntro() {
     const c = INTRO_CONTENT[state.lang];
 
-    const sep = state.lang === "zh" ? "：" : ": ";
+    const sep = { zh: "：", en: ": ", ja: "：", ko: ": " }[state.lang] || ": ";
     const problemItems = c.problemTypes.items.map((it) => `
       <li><strong>${escapeHtml(it.label)}${sep}</strong>${escapeHtml(it.text)}</li>
     `).join("");
@@ -362,8 +408,8 @@
       <div class="category-grid">
         ${TREE.map((cat) => `
           <button class="category-card" data-cat="${cat.id}">
-            <p class="category-card-title">${escapeHtml(tx(cat.zh, cat.en))}</p>
-            <p class="category-card-meta">${(cat.children || []).length} ${tx("个分支", "branches")}</p>
+            <p class="category-card-title">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko))}</p>
+            <p class="category-card-meta">${(cat.children || []).length} ${tx("个分支", "branches", "分岐", "개 분기")}</p>
           </button>
         `).join("")}
       </div>
@@ -379,17 +425,17 @@
     if (!state.mmLeafOpen[cat.id]) {
       state.mmLeafOpen[cat.id] = new Set();
     }
-    if (focusPath.length) {
-      focusPath.forEach((id) => state.mmOpen[cat.id].add(id));
-      state.mmLeafOpen[cat.id].add(focusPath[focusPath.length - 1]);
-    }
+    // Note: search can deep-link here with a focusPath, but mind map mode intentionally
+    // always starts at the default two-level view (per product decision) rather than
+    // auto-expanding every ancestor down to the matched node — deeper levels are still
+    // reachable by clicking through, just not force-revealed on arrival.
     const openSet = state.mmOpen[cat.id];
     const leafOpenSet = state.mmLeafOpen[cat.id];
 
     function renderLeafResult(node, ancestorTexts) {
       const tagClass = node.escalate ? "escalate" : (node.resolved ? "resolved" : "neutral");
       const tagLabel = node.escalate ? t("escalateTag") : (node.resolved ? t("resolvedTag") : t("infoTag"));
-      const text = tx(node.zh, node.en);
+      const text = tx(node.zh, node.en, node.ja, node.ko);
       const copyPayload = ancestorTexts.concat([text]).join(" > ");
       return `
         <div class="qa-result ${tagClass} mm-leaf-result">
@@ -413,9 +459,9 @@
         : node.resolved
           ? `<span class="mm-tag resolved">${t("resolvedTag")}</span>`
           : "";
-      const detail = tx(node.detailZh, node.detailEn);
+      const detail = tx(node.detailZh, node.detailEn, node.detailJa, node.detailKo);
       const toggleAttr = hasChildren ? `data-toggle="${node.id}"` : `data-toggle-leaf="${node.id}"`;
-      const nodeText = tx(node.zh, node.en);
+      const nodeText = tx(node.zh, node.en, node.ja, node.ko);
       return `
         <div class="mm-node" id="mm-node-${node.id}">
           <div class="mm-node-row">
@@ -435,8 +481,8 @@
       `;
     }
 
-    const rootDetail = tx(cat.detailZh, cat.detailEn);
-    const rootText = tx(cat.zh, cat.en);
+    const rootDetail = tx(cat.detailZh, cat.detailEn, cat.detailJa, cat.detailKo);
+    const rootText = tx(cat.zh, cat.en, cat.ja, cat.ko);
 
     return `
       <div class="mindmap" id="mindmap-root">
@@ -469,7 +515,7 @@
     const breadcrumb = `<div class="qa-breadcrumb">${chain.map((n, i) => {
       const isCurrent = i === chain.length - 1;
       const crumbPath = path.slice(0, i).join(".");
-      return `<button type="button" class="qa-breadcrumb-item ${isCurrent ? "current" : ""}" data-path="${crumbPath}">${escapeHtml(tx(n.zh, n.en))}</button>`;
+      return `<button type="button" class="qa-breadcrumb-item ${isCurrent ? "current" : ""}" data-path="${crumbPath}">${escapeHtml(tx(n.zh, n.en, n.ja, n.ko))}</button>`;
     }).join("")}</div>`;
 
     const isLeaf = !cur.children || !cur.children.length;
@@ -477,8 +523,8 @@
     if (isLeaf) {
       const tagClass = cur.escalate ? "escalate" : (cur.resolved ? "resolved" : "neutral");
       const tagLabel = cur.escalate ? t("escalateTag") : (cur.resolved ? t("resolvedTag") : t("infoTag"));
-      const detail = tx(cur.detailZh, cur.detailEn) || tx(cur.zh, cur.en);
-      const copyPayload = [tx(cat.zh, cat.en)].concat(chain.slice(1).map((n) => tx(n.zh, n.en))).join(" > ") + "\n\n" + detail;
+      const detail = tx(cur.detailZh, cur.detailEn, cur.detailJa, cur.detailKo) || tx(cur.zh, cur.en, cur.ja, cur.ko);
+      const copyPayload = [tx(cat.zh, cat.en, cat.ja, cat.ko)].concat(chain.slice(1).map((n) => tx(n.zh, n.en, n.ja, n.ko))).join(" > ") + "\n\n" + detail;
       return `
         <div class="qa-card">
           ${breadcrumb}
@@ -496,19 +542,19 @@
       `.replace("<script></script>", "") + `<div data-copy-payload="${encodeURIComponent(copyPayload)}" id="qa-copy-payload" style="display:none"></div>`;
     }
 
-    const detail = tx(cur.detailZh, cur.detailEn);
+    const detail = tx(cur.detailZh, cur.detailEn, cur.detailJa, cur.detailKo);
     return `
       <div class="qa-card">
         ${breadcrumb}
         <p class="qa-step">${t("qaStepOf")} ${chain.length}</p>
-        <h2 class="qa-question">${escapeHtml(tx(cur.zh, cur.en))}</h2>
+        <h2 class="qa-question">${escapeHtml(tx(cur.zh, cur.en, cur.ja, cur.ko))}</h2>
         ${detail ? `<p class="qa-detail">${escapeHtml(detail)}</p>` : ""}
         <div class="qa-options">
           ${cur.children.length === 1
-            ? `<button class="qa-single-next" data-path="${path.concat(cur.children[0].id).join(".")}">${escapeHtml(tx(cur.children[0].zh, cur.children[0].en))}${ICONS.arrow}</button>`
+            ? `<button class="qa-single-next" data-path="${path.concat(cur.children[0].id).join(".")}">${escapeHtml(tx(cur.children[0].zh, cur.children[0].en, cur.children[0].ja, cur.children[0].ko))}${ICONS.arrow}</button>`
             : cur.children.map((c) => `
                 <button class="qa-option" data-path="${path.concat(c.id).join(".")}">
-                  <span>${escapeHtml(tx(c.zh, c.en))}</span>
+                  <span>${escapeHtml(tx(c.zh, c.en, c.ja, c.ko))}</span>
                   ${ICONS.arrow}
                 </button>
               `).join("")
@@ -532,7 +578,7 @@
         </div>
         <div class="code-grid">
           ${ERROR_CODES.map((c) => {
-            const steps = state.lang === "zh" ? c.stepsZh : c.stepsEn;
+            const steps = tx(c.stepsZh, c.stepsEn, c.stepsJa, c.stepsKo);
             const copyPayload = `${c.code}\n` + steps.map((s, i) => `${i + 1}. ${s}`).join("\n");
             const isHighlight = highlight && norm(highlight) === norm(c.code);
             return `
@@ -565,7 +611,7 @@
 
     function renderLink(link) {
       const label = LINK_LABEL[link.type] || link.type;
-      const note = link.note ? ` (${tx(link.note.zh, link.note.en)})` : "";
+      const note = link.note ? ` (${tx(link.note.zh, link.note.en, link.note.ja, link.note.ko)})` : "";
       if (!link.url) {
         return `<span class="video-link video-link-disabled">${label}${escapeHtml(note)}</span>`;
       }
@@ -577,8 +623,8 @@
       if (!item.links.length) return `${title}\n(${t("linkPending")})`;
       const linkLines = item.links.map((l) => {
         const label = LINK_LABEL[l.type] || l.type;
-        const note = l.note ? ` (${tx(l.note.zh, l.note.en)})` : "";
-        return l.url ? `${label}: ${l.url}${note}` : `${label}: ${tx("链接见共享文件夹", "link in shared folder")}${note}`;
+        const note = l.note ? ` (${tx(l.note.zh, l.note.en, l.note.ja, l.note.ko)})` : "";
+        return l.url ? `${label}: ${l.url}${note}` : `${label}: ${tx("链接见共享文件夹", "link in shared folder", "共有フォルダ内のリンクをご確認ください", "링크는 공유 폴더를 확인하세요")}${note}`;
       });
       return [title].concat(linkLines).join("\n");
     }
@@ -604,7 +650,7 @@
       return `
         <div class="video-module">
           <button class="video-module-header ${isOpen ? "is-open" : ""}" data-video-toggle="${mod.id}">
-            <span class="video-module-title">${escapeHtml(tx(mod.zh, mod.en))}</span>
+            <span class="video-module-title">${escapeHtml(tx(mod.zh, mod.en, mod.ja, mod.ko))}</span>
             <span class="video-module-count">${mod.items.length}</span>
             ${ICONS.chevron}
           </button>
@@ -630,13 +676,12 @@
     if (!UPDATES.length) return renderEmptyPage("navUpdates", "emptyUpdates");
 
     const cards = UPDATES.map((u) => {
-      const changes = tx(u.changesZh, u.changesEn);
+      const changes = tx(u.changesZh, u.changesEn, u.changesJa, u.changesKo);
       const copyPayload = [
         `${u.titleZh} / ${u.titleEn}`,
         `${t("firmwareVersion")}: ${u.firmwareVersion}`,
         `${t("appVersion")}: ${u.appVersion}`,
-        t("rolloutPlan") + ":",
-        ...u.rollout.map((r) => `  ${tx(r.labelZh, r.labelEn)} (${r.date}): ${tx(r.scopeZh, r.scopeEn)}`),
+        ...(u.completionDate ? [`${t("estCompletion")}: ${u.completionDate}`] : []),
         t("changelog") + ":",
         ...changes.map((c, i) => `  ${i + 1}. ${c}`)
       ].join("\n");
@@ -645,8 +690,8 @@
         <div class="update-card">
           <div class="update-card-head">
             <div>
-              <h3 class="update-title">${escapeHtml(tx(u.titleZh, u.titleEn))}</h3>
-              <span class="update-tag">${escapeHtml(tx(u.tagZh, u.tagEn))}</span>
+              <h3 class="update-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo))}</h3>
+              <span class="update-tag">${escapeHtml(tx(u.tagZh, u.tagEn, u.tagJa, u.tagKo))}</span>
             </div>
             <button class="copy-btn" data-copy="${encodeURIComponent(copyPayload)}" data-label="${t("copyLinks")}">${t("copyLinks")}</button>
           </div>
@@ -660,19 +705,11 @@
               <span class="update-version-label">${t("appVersion")}</span>
               <span class="update-version-value">${escapeHtml(u.appVersion)}</span>
             </div>
-          </div>
-
-          <div class="update-section">
-            <h4 class="update-section-title">${t("rolloutPlan")}</h4>
-            <div class="update-rollout">
-              ${u.rollout.map((r) => `
-                <div class="update-rollout-row">
-                  <span class="update-rollout-label">${escapeHtml(tx(r.labelZh, r.labelEn))}</span>
-                  <span class="update-rollout-date">${escapeHtml(r.date)}</span>
-                  <span class="update-rollout-scope">${escapeHtml(tx(r.scopeZh, r.scopeEn))}</span>
-                </div>
-              `).join("")}
-            </div>
+            ${u.completionDate ? `
+            <div class="update-version-item">
+              <span class="update-version-label">${t("estCompletion")}</span>
+              <span class="update-version-value">${escapeHtml(u.completionDate)}</span>
+            </div>` : ""}
           </div>
 
           <div class="update-section">
@@ -733,6 +770,9 @@
         break;
       case "videos":
         html = renderVideos();
+        break;
+      case "learning":
+        html = renderEmptyPage("navLearning", "emptyLearning");
         break;
       case "updates":
         html = renderUpdates();
@@ -881,7 +921,7 @@
   /* ---------- init ---------- */
 
   document.addEventListener("DOMContentLoaded", () => {
-    document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
+    document.documentElement.lang = { zh: "zh-CN", en: "en", ja: "ja", ko: "ko" }[state.lang] || "en";
     buildIndex();
     renderHeader();
     route();
