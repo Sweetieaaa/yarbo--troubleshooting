@@ -11,6 +11,8 @@
     mmOpen: {}, // { [categoryId]: Set(openBranchNodeIds) }
     mmLeafOpen: {}, // { [categoryId]: Set(openLeafResultNodeIds) }
     videoOpen: new Set(), // Set(openVideoModuleIds)
+    caseOpen: new Set(), // Set(openCaseStudyIds)
+    caseFilters: new Set(), // Set(selectedCaseTagKeywords)
   };
 
   function t(key) { return UI[state.lang][key]; }
@@ -119,6 +121,31 @@
     return { codes: codeMatches.slice(0, 6), nodes: nodeMatches };
   }
 
+  function searchVideos(query) {
+    const q = norm(query);
+    if (!q) return [];
+    const out = [];
+    VIDEOS.forEach((mod) => {
+      mod.items.forEach((item) => {
+        const hay = norm([item.titleEn, item.titleZh].filter(Boolean).join(" "));
+        if (hay.includes(q)) out.push({ mod, item });
+      });
+    });
+    return out.slice(0, 8);
+  }
+
+  function searchUpdates(query) {
+    const q = norm(query);
+    if (!q) return [];
+    return UPDATES.filter((u) => {
+      const hay = norm([
+        u.titleZh, u.titleEn, u.titleJa, u.titleKo,
+        ...(u.changesZh || []), ...(u.changesEn || []), ...(u.changesJa || []), ...(u.changesKo || [])
+      ].filter(Boolean).join(" "));
+      return hay.includes(q);
+    }).slice(0, 6);
+  }
+
   /* ---------- clipboard ---------- */
 
   function copyText(text, btn) {
@@ -204,10 +231,10 @@
       <div class="search-bar">
         <div class="search-box">
           ${ICONS.search}
-          <input type="text" class="search-input" id="search-input" placeholder="${t("searchPlaceholder")}" autocomplete="off" />
+          <input type="text" class="search-input" id="search-input" placeholder="${currentTop === "videos" ? t("searchPlaceholderVideos") : currentTop === "updates" ? t("searchPlaceholderUpdates") : t("searchPlaceholder")}" autocomplete="off" />
           <div class="search-results" id="search-results"></div>
         </div>
-        <p class="search-hint">${t("searchHint")}</p>
+        <p class="search-hint">${currentTop === "videos" ? t("searchHintVideos") : currentTop === "updates" ? t("searchHintUpdates") : t("searchHint")}</p>
       </div>
     `;
 
@@ -258,29 +285,54 @@
     input.addEventListener("input", () => {
       const q = input.value;
       if (!q.trim()) { results.classList.remove("open"); results.innerHTML = ""; return; }
-      const { codes, nodes } = searchAll(q);
-      const prioritizeCode = looksLikeCode(q);
 
+      const currentPage = (location.hash.replace(/^#/, "").split("/")[0]) || "intro";
       let html = "";
-      const codeItems = codes.map((c) => `
-        <button class="search-result-item" data-goto="codes/${encodeURIComponent(c.code)}">
-          <div class="search-result-kind">${t("navCodes")}</div>
-          <div class="search-result-title">${escapeHtml(c.code)}</div>
-        </button>
-      `).join("");
-      const nodeItems = nodes.map((n) => {
-        const cat = TREE.find((c) => c.id === n.categoryId);
-        const fullPath = n.path.concat(n.node.id === n.categoryId ? [] : [n.node.id]);
-        const gotoPath = fullPath.filter((id) => id !== n.categoryId);
-        return `
-        <button class="search-result-item" data-goto="troubleshoot/${n.categoryId}/mindmap/${gotoPath.join(".")}">
-          <div class="search-result-kind">${t("navTrouble")}</div>
-          <div class="search-result-title">${escapeHtml(tx(n.node.zh, n.node.en, n.node.ja, n.node.ko))}</div>
-          <div class="search-result-path">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko))}</div>
-        </button>`;
-      }).join("");
 
-      html = prioritizeCode ? (codeItems + nodeItems) : (nodeItems + codeItems);
+      if (currentPage === "videos") {
+        const videoMatches = searchVideos(q);
+        html = videoMatches.map(({ mod, item }) => {
+          const title = [item.titleEn, item.titleZh].filter(Boolean).join(" · ");
+          return `
+            <button class="search-result-item" data-goto="videos/${encodeURIComponent(mod.id)}/${encodeURIComponent(item.id)}">
+              <div class="search-result-kind">${t("navVideos")}</div>
+              <div class="search-result-title">${escapeHtml(title)}</div>
+              <div class="search-result-path">${escapeHtml(tx(mod.zh, mod.en, mod.ja, mod.ko))}</div>
+            </button>`;
+        }).join("");
+      } else if (currentPage === "updates") {
+        const updateMatches = searchUpdates(q);
+        html = updateMatches.map((u) => `
+          <button class="search-result-item" data-goto="updates/${encodeURIComponent(u.id)}">
+            <div class="search-result-kind">${t("navUpdates")}</div>
+            <div class="search-result-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo))}</div>
+          </button>`).join("");
+      } else {
+        // Troubleshooting (including error codes and case studies), Introduction, and
+        // Learning — unchanged default behavior: error-code / troubleshooting-tree search.
+        const { codes, nodes } = searchAll(q);
+        const prioritizeCode = looksLikeCode(q);
+
+        const codeItems = codes.map((c) => `
+          <button class="search-result-item" data-goto="codes/${encodeURIComponent(c.code)}">
+            <div class="search-result-kind">${t("navCodes")}</div>
+            <div class="search-result-title">${escapeHtml(c.code)}</div>
+          </button>
+        `).join("");
+        const nodeItems = nodes.map((n) => {
+          const cat = TREE.find((c) => c.id === n.categoryId);
+          const fullPath = n.path.concat(n.node.id === n.categoryId ? [] : [n.node.id]);
+          const gotoPath = fullPath.filter((id) => id !== n.categoryId);
+          return `
+          <button class="search-result-item" data-goto="troubleshoot/${n.categoryId}/mindmap/${gotoPath.join(".")}">
+            <div class="search-result-kind">${t("navTrouble")}</div>
+            <div class="search-result-title">${escapeHtml(tx(n.node.zh, n.node.en, n.node.ja, n.node.ko))}</div>
+            <div class="search-result-path">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko))}</div>
+          </button>`;
+        }).join("");
+
+        html = prioritizeCode ? (codeItems + nodeItems) : (nodeItems + codeItems);
+      }
 
       if (!html) {
         html = `<div class="search-empty">${t("searchNoResult")}</div>`;
@@ -365,7 +417,7 @@
   /* ---------- page: Troubleshooting ---------- */
 
   function renderTroubleshoot(parts) {
-    // parts: [] -> category grid; [catId] -> mindmap default; [catId, "mindmap", path]; [catId, "qa", path]
+    // parts: [] -> category grid; ["cases"] -> case studies; [catId] -> mindmap default; [catId, "mindmap", path]; [catId, "qa", path]
     const catId = parts[0];
     const mode = parts[1] || "mindmap";
     const pathStr = parts[2] || "";
@@ -374,6 +426,14 @@
     let body;
     if (!catId) {
       body = renderCategoryGrid();
+    } else if (catId === "cases") {
+      body = `
+        <div class="tree-toolbar">
+          <div></div>
+          <button class="btn-plain" id="back-to-categories">${t("back")}</button>
+        </div>
+        ${renderCaseStudies()}
+      `;
     } else {
       const cat = TREE.find((c) => c.id === catId);
       if (!cat) { body = renderCategoryGrid(); }
@@ -405,6 +465,13 @@
 
   function renderCategoryGrid() {
     return `
+      <a href="#troubleshoot/cases" class="case-study-banner">
+        <div>
+          <p class="case-study-banner-title">${escapeHtml(t("navCases"))}</p>
+          <p class="case-study-banner-meta">${CASES.length}</p>
+        </div>
+        ${ICONS.chevron}
+      </a>
       <div class="category-grid">
         ${TREE.map((cat) => `
           <button class="category-card" data-cat="${cat.id}">
@@ -412,6 +479,81 @@
             <p class="category-card-meta">${(cat.children || []).length} ${tx("个分支", "branches", "分岐", "개 분기")}</p>
           </button>
         `).join("")}
+      </div>
+    `;
+  }
+
+  /* ----- Case studies renderer ----- */
+
+  const CASE_TAGS = ["rtk", "bumper", "camera", "battery", "datacenter", "recharge"];
+  const CASE_TAG_LABEL_KEY = { rtk: "tagRtk", bumper: "tagBumper", camera: "tagCamera", battery: "tagBattery", datacenter: "tagDatacenter", recharge: "tagRecharge" };
+
+  function renderCaseStudies() {
+    if (!state.caseOpen) state.caseOpen = new Set();
+    if (!state.caseFilters) state.caseFilters = new Set();
+
+    function renderImages(item) {
+      if (!item.images) return "";
+      return `<div class="case-card-images">${item.images.map((src) => `<img class="case-image" src="${src}" alt="" loading="lazy" />`).join("")}</div>`;
+    }
+
+    const filtered = state.caseFilters.size
+      ? CASES.filter((c) => (c.tags || []).some((tag) => state.caseFilters.has(tag)))
+      : CASES;
+
+    const sidebar = `
+      <div class="case-filter-sidebar">
+        <p class="case-filter-heading">${t("caseFilterHeading")}</p>
+        ${CASE_TAGS.map((tag) => `
+          <label class="case-filter-item">
+            <input type="checkbox" data-case-filter="${tag}" ${state.caseFilters.has(tag) ? "checked" : ""} />
+            <span>${t(CASE_TAG_LABEL_KEY[tag])}</span>
+          </label>
+        `).join("")}
+        ${state.caseFilters.size ? `<button class="case-filter-clear" id="case-filter-clear">${t("caseFilterClear")}</button>` : ""}
+      </div>
+    `;
+
+    const cards = filtered.length ? filtered.map((c) => {
+      const isOpen = state.caseOpen.has(c.id);
+      const problem = tx(c.problemZh, c.problemEn, c.problemJa, c.problemKo);
+      const analysis = tx(c.analysisZh, c.analysisEn, c.analysisJa, c.analysisKo);
+      const solution = tx(c.solutionZh, c.solutionEn, c.solutionJa, c.solutionKo);
+      return `
+        <div class="case-card ${isOpen ? "is-open" : ""}">
+          <button class="case-card-header" data-case-toggle="${c.id}">
+            <div class="case-card-heading">
+              <h3 class="case-card-title">${escapeHtml(tx(c.titleZh, c.titleEn, c.titleJa, c.titleKo))}</h3>
+              <p class="case-card-problem">${escapeHtml(problem)}</p>
+              ${renderImages(c)}
+            </div>
+            ${ICONS.chevron}
+          </button>
+          ${isOpen ? `
+            <div class="case-card-body">
+              <div class="case-card-section">
+                <h4 class="case-card-section-title">${t("caseAnalysis")}</h4>
+                <p class="case-card-text">${escapeHtml(analysis)}</p>
+              </div>
+              <div class="case-card-section">
+                <h4 class="case-card-section-title">${t("caseSolution")}</h4>
+                <p class="case-card-text">${escapeHtml(solution)}</p>
+              </div>
+              ${c.video ? `<div class="case-card-media"><video class="case-video" src="${c.video}" controls preload="metadata"></video></div>` : ""}
+            </div>
+          ` : ""}
+        </div>
+      `;
+    }).join("") : `<div class="empty-state"><p>${t("caseNoResult")}</p></div>`;
+
+    return `
+      <div class="page-header" style="margin-bottom:20px;">
+        <h2 class="intro-heading" style="margin:0 0 6px;">${t("navCases")}</h2>
+        <p class="page-subtitle" style="margin:0;">${t("casesIntro")}</p>
+      </div>
+      <div class="case-layout">
+        ${sidebar}
+        <div class="case-list">${cards}</div>
       </div>
     `;
   }
@@ -606,7 +748,7 @@
 
   const LINK_LABEL = { youtube: "YouTube", wiki: "Wiki", drive: "Google Drive" };
 
-  function renderVideos() {
+  function renderVideos(focusModuleId) {
     if (!state.videoOpen) state.videoOpen = new Set();
 
     function renderLink(link) {
@@ -635,7 +777,7 @@
         ? item.links.map(renderLink).join("")
         : `<span class="video-link video-link-pending">${t("linkPending")}</span>`;
       return `
-        <div class="video-row">
+        <div class="video-row" id="video-item-${item.id}">
           <div class="video-row-main">
             <p class="video-row-title">${escapeHtml(title)}</p>
             <div class="video-row-links">${links}</div>
@@ -644,6 +786,8 @@
         </div>
       `;
     }
+
+    if (focusModuleId) state.videoOpen.add(focusModuleId);
 
     const modules = VIDEOS.map((mod) => {
       const isOpen = state.videoOpen.has(mod.id);
@@ -687,7 +831,7 @@
       ].join("\n");
 
       return `
-        <div class="update-card">
+        <div class="update-card" id="update-${u.id}">
           <div class="update-card-head">
             <div>
               <h3 class="update-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo))}</h3>
@@ -769,7 +913,7 @@
         html = renderCodes(highlightCode);
         break;
       case "videos":
-        html = renderVideos();
+        html = renderVideos(segs[1] ? decodeURIComponent(segs[1]) : null);
         break;
       case "learning":
         html = renderEmptyPage("navLearning", "emptyLearning");
@@ -807,6 +951,25 @@
           box.style.boxShadow = "0 0 0 3px var(--primary-soft)";
           setTimeout(() => { box.style.boxShadow = ""; }, 2200);
         }
+      } else {
+        window.scrollTo({ top: 0 });
+      }
+    } else if (page === "videos" && segs[2]) {
+      const el = document.getElementById("video-item-" + decodeURIComponent(segs[2]));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.style.boxShadow = "0 0 0 3px var(--primary-soft)";
+        el.style.borderRadius = "var(--radius-m)";
+        setTimeout(() => { el.style.boxShadow = ""; }, 2200);
+      } else {
+        window.scrollTo({ top: 0 });
+      }
+    } else if (page === "updates" && segs[1]) {
+      const el = document.getElementById("update-" + decodeURIComponent(segs[1]));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.style.boxShadow = "0 0 0 3px var(--primary-soft)";
+        setTimeout(() => { el.style.boxShadow = ""; }, 2200);
       } else {
         window.scrollTo({ top: 0 });
       }
@@ -880,6 +1043,33 @@
       });
     });
 
+    // case study card toggles
+    main.querySelectorAll("[data-case-toggle]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        if (e.target.closest(".case-image")) return;
+        const id = btn.dataset.caseToggle;
+        if (state.caseOpen.has(id)) state.caseOpen.delete(id); else state.caseOpen.add(id);
+        route(true);
+      });
+    });
+
+    // case study tag filter checkboxes
+    main.querySelectorAll("[data-case-filter]").forEach((input) => {
+      input.addEventListener("change", () => {
+        const tag = input.dataset.caseFilter;
+        if (input.checked) state.caseFilters.add(tag); else state.caseFilters.delete(tag);
+        route(true);
+      });
+    });
+
+    const caseFilterClear = document.getElementById("case-filter-clear");
+    if (caseFilterClear) {
+      caseFilterClear.addEventListener("click", () => {
+        state.caseFilters.clear();
+        route(true);
+      });
+    }
+
     // QA breadcrumb — jump back to any earlier step
     main.querySelectorAll(".qa-breadcrumb-item[data-path]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -918,6 +1108,31 @@
     }
   }
 
+  /* ---------- image lightbox ---------- */
+
+  function setupLightbox() {
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImg = document.getElementById("image-lightbox-img");
+    const closeBtn = document.getElementById("image-lightbox-close");
+    if (!lightbox) return;
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    }
+
+    document.addEventListener("click", (e) => {
+      const img = e.target.closest(".case-card-images .case-image");
+      if (img) {
+        lightboxImg.src = img.src;
+        lightbox.classList.add("open");
+      }
+    });
+    closeBtn.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+  }
+
   /* ---------- init ---------- */
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -925,6 +1140,7 @@
     buildIndex();
     renderHeader();
     route();
+    setupLightbox();
   });
 
   window.addEventListener("hashchange", route);
