@@ -248,6 +248,250 @@ const UI = {
     tagRecharge: "Recharge",
     changelog: "업데이트 내용",
     fullRollout: "전체 배포",
+  },
+  de: {
+    siteName: "Yarbo Fehlerbehebung",
+    navIntro: "Intro",
+    navTrouble: "Fehlerbehebung",
+    navCodes: "Fehlercodes",
+    navVideos: "Reparaturvideos",
+    navLearning: "Lernvideos",
+    navUpdates: "Updates",
+    searchPlaceholder: "Fehlercode oder Stichwort suchen, z. B. B009 / Bluetooth / Grenze",
+    searchHint: "Einen Fehlercode eingeben, um direkt dorthin zu springen; ein Stichwort eingeben, um zu den Fehlerbehebungsschritten zu springen",
+    searchHintVideos: "Stichwort eingeben, um Reparaturvideo-Titel zu durchsuchen",
+    searchHintUpdates: "Stichwort eingeben, um die Update-Inhalte zu durchsuchen",
+    searchPlaceholderVideos: "Reparaturvideos durchsuchen, z. B. Kamera / Motor / Antenne",
+    searchPlaceholderUpdates: "Update-Inhalte durchsuchen, z. B. NetRTK / DC / Wi-Fi",
+    searchNoResult: "Keine Treffer gefunden. Ein nicht aufgeführter Code bedeutet, dass derzeit keine Ferndiagnose möglich ist — bitte einen Screenshot machen und direkt an den FSE melden.",
+    modeQA: "Schritt für Schritt",
+    modeMindmap: "Mindmap-Modus",
+    start: "Diagnose starten",
+    restart: "Neu starten",
+    back: "Zurück",
+    copy: "Kopieren",
+    copied: "Kopiert",
+    escalateTag: "FSE kontaktieren",
+    resolvedTag: "Gelöst",
+    infoTag: "Referenz",
+    expand: "Erweitern",
+    collapse: "Einklappen",
+    emptyIntro: "Inhalt folgt in Kürze.",
+    emptyVideos: "Die Reparaturvideos werden derzeit erstellt und erscheinen hier, sobald sie fertig sind.",
+    emptyLearning: "Die Lernvideos werden derzeit erstellt und erscheinen hier, sobald sie fertig sind.",
+    emptyUpdates: "Noch keine Firmware-/Software-Updates. Neue Versionen werden hier veröffentlicht, sobald sie verfügbar sind.",
+    codesIntro: "Auf eine Karte klicken, um die vollständigen Fehlerbehebungsschritte zu sehen. Über die Kopieren-Schaltfläche auf jeder Karte lassen sich die Details direkt an den Support (FSE) senden.",
+    codesFooter: "Ein hier nicht aufgeführter Code kann nicht per Ferndiagnose vorab geprüft werden — bitte einen Screenshot machen und direkt an den FSE eskalieren.",
+    treeIntro: "Unten eine Kategorie auswählen, um zu beginnen, oder oben in der Suchleiste direkt zu einem Thema springen.",
+    qaStepOf: "Schritt",
+    highFreq: "Häufiger Fehler",
+    versionCheck: "Vor der Fehlerbehebung unter Version Information prüfen, ob die Firmware aktuell ist.",
+    videosIntro: "Reparaturvideos nach Modul durchsuchen — auf eine Modulüberschrift klicken, um sie zu erweitern oder einzuklappen. Jedes Video hat eine Kopieren-Schaltfläche, die Titel und Link(s) kopiert, bereit zum Einfügen in eine Nachricht oder ein Ticket.",
+    linkPending: "Video folgt",
+    driveNoLink: "Google Drive (Link im freigegebenen Ordner)",
+    copyLinks: "Kopieren",
+    firmwareVersion: "Firmware-Version",
+    appVersion: "App-Version",
+    estCompletion: "Voraussichtlicher Abschluss der Verteilung",
+    navCases: "Fallstudien",
+    casesIntro: "Auf eine Karte klicken, um die vollständige Analyse und Lösung zu sehen; erneut klicken, um sie einzuklappen.",
+    caseProblem: "Problem",
+    caseAnalysis: "Analyse",
+    caseSolution: "Lösung",
+    caseFilterHeading: "Nach Stichwort filtern",
+    caseFilterClear: "Filter zurücksetzen",
+    caseNoResult: "Keine Fälle entsprechen den ausgewählten Filtern.",
+    tagRtk: "RTK",
+    tagBumper: "Bumper",
+    tagCamera: "Camera",
+    tagBattery: "Battery",
+    tagDatacenter: "Data Center",
+    tagRecharge: "Recharge",
+    changelog: "Neuerungen",
+    fullRollout: "Vollständiges Rollout",
+  },
+  fr: {
+    siteName: "Yarbo Dépannage",
+    navIntro: "Intro",
+    navTrouble: "Dépannage",
+    navCodes: "Codes d'erreur",
+    navVideos: "Vidéos de réparation",
+    navLearning: "Vidéos de formation",
+    navUpdates: "Actualités",
+    searchPlaceholder: "Rechercher un code d'erreur ou un mot-clé, ex. B009 / bluetooth / limite",
+    searchHint: "Saisir un code d'erreur pour y accéder directement ; saisir un mot-clé de symptôme pour accéder aux étapes de dépannage",
+    searchHintVideos: "Saisir un mot-clé pour rechercher les titres des vidéos de réparation",
+    searchHintUpdates: "Saisir un mot-clé pour rechercher le contenu des mises à jour",
+    searchPlaceholderVideos: "Rechercher des vidéos de réparation, ex. caméra / moteur / antenne",
+    searchPlaceholderUpdates: "Rechercher le contenu des mises à jour, ex. NetRTK / DC / Wi-Fi",
+    searchNoResult: "Aucun résultat trouvé. Un code non répertorié signifie qu'un diagnostic à distance n'est pas possible pour l'instant — veuillez faire une capture d'écran et l'escalader directement au FSE.",
+    modeQA: "Étape par étape",
+    modeMindmap: "Mode carte mentale",
+    start: "Démarrer le diagnostic",
+    restart: "Recommencer",
+    back: "Retour",
+    copy: "Copier",
+    copied: "Copié",
+    escalateTag: "Contacter le FSE",
+    resolvedTag: "Résolu",
+    infoTag: "Référence",
+    expand: "Développer",
+    collapse: "Réduire",
+    emptyIntro: "Contenu à venir prochainement.",
+    emptyVideos: "Les vidéos de réparation sont en cours de production et apparaîtront ici une fois prêtes.",
+    emptyLearning: "Les vidéos de formation sont en cours de production et apparaîtront ici une fois prêtes.",
+    emptyUpdates: "Aucune mise à jour firmware/logicielle pour l'instant. Les nouvelles versions seront publiées ici dès qu'elles seront disponibles.",
+    codesIntro: "Cliquer sur une carte pour voir toutes les étapes de dépannage. Le bouton copier de chaque carte permet d'envoyer directement les détails au support (FSE).",
+    codesFooter: "Un code non répertorié ci-dessous ne peut pas être diagnostiqué à distance à l'avance — veuillez faire une capture d'écran et l'escalader directement au FSE.",
+    treeIntro: "Choisir une catégorie ci-dessous pour commencer, ou utiliser la barre de recherche ci-dessus pour accéder directement à un sujet.",
+    qaStepOf: "Étape",
+    highFreq: "Erreur fréquente",
+    versionCheck: "Avant le dépannage, vérifier dans Version Information que le firmware est à jour.",
+    videosIntro: "Parcourir les vidéos de réparation par module — cliquer sur un titre de module pour le développer ou le réduire. Chaque vidéo dispose d'un bouton copier qui copie son titre et ses lien(s), prêt à coller dans un message ou un ticket.",
+    linkPending: "Vidéo à venir",
+    driveNoLink: "Google Drive (lien dans le dossier partagé)",
+    copyLinks: "Copier",
+    firmwareVersion: "Version du firmware",
+    appVersion: "Version de l'application",
+    estCompletion: "Fin de déploiement estimée",
+    navCases: "Études de cas",
+    casesIntro: "Cliquer sur une carte pour voir l'analyse complète et la solution ; cliquer à nouveau pour la réduire.",
+    caseProblem: "Problème",
+    caseAnalysis: "Analyse",
+    caseSolution: "Solution",
+    caseFilterHeading: "Filtrer par mot-clé",
+    caseFilterClear: "Effacer les filtres",
+    caseNoResult: "Aucun cas ne correspond aux filtres sélectionnés.",
+    tagRtk: "RTK",
+    tagBumper: "Bumper",
+    tagCamera: "Camera",
+    tagBattery: "Battery",
+    tagDatacenter: "Data Center",
+    tagRecharge: "Recharge",
+    changelog: "Nouveautés",
+    fullRollout: "Déploiement complet",
+  },
+  it: {
+    siteName: "Yarbo Risoluzione problemi",
+    navIntro: "Intro",
+    navTrouble: "Risoluzione problemi",
+    navCodes: "Codici di errore",
+    navVideos: "Video di riparazione",
+    navLearning: "Video formativi",
+    navUpdates: "Aggiornamenti",
+    searchPlaceholder: "Cerca un codice di errore o una parola chiave, es. B009 / bluetooth / confine",
+    searchHint: "Inserisci un codice di errore per andare direttamente ad esso; inserisci una parola chiave del sintomo per passare ai passaggi di risoluzione",
+    searchHintVideos: "Inserisci una parola chiave per cercare i titoli dei video di riparazione",
+    searchHintUpdates: "Inserisci una parola chiave per cercare i contenuti degli aggiornamenti",
+    searchPlaceholderVideos: "Cerca video di riparazione, es. fotocamera / motore / antenna",
+    searchPlaceholderUpdates: "Cerca i contenuti degli aggiornamenti, es. NetRTK / DC / Wi-Fi",
+    searchNoResult: "Nessun risultato trovato. Un codice non presente nell'elenco significa che al momento non è possibile una diagnosi remota preliminare: fai uno screenshot e segnalalo direttamente all'FSE.",
+    modeQA: "Passo dopo passo",
+    modeMindmap: "Modalità mappa mentale",
+    start: "Avvia diagnosi",
+    restart: "Ricomincia",
+    back: "Indietro",
+    copy: "Copia",
+    copied: "Copiato",
+    escalateTag: "Contatta l'FSE",
+    resolvedTag: "Risolto",
+    infoTag: "Riferimento",
+    expand: "Espandi",
+    collapse: "Comprimi",
+    emptyIntro: "Contenuto in arrivo a breve.",
+    emptyVideos: "I video di riparazione sono in produzione e appariranno qui non appena pronti.",
+    emptyLearning: "I video formativi sono in produzione e appariranno qui non appena pronti.",
+    emptyUpdates: "Nessun aggiornamento firmware/software per ora. Le nuove versioni saranno pubblicate qui non appena disponibili.",
+    codesIntro: "Clicca su una scheda per vedere tutti i passaggi di risoluzione. Il pulsante copia su ogni scheda invia i dettagli direttamente al supporto (FSE).",
+    codesFooter: "Un codice non presente nell'elenco sottostante non può essere diagnosticato da remoto in anticipo: fai uno screenshot e segnalalo direttamente all'FSE.",
+    treeIntro: "Scegli una categoria qui sotto per iniziare, oppure usa la barra di ricerca in alto per andare direttamente a un argomento.",
+    qaStepOf: "Passaggio",
+    highFreq: "Errore frequente",
+    versionCheck: "Prima della risoluzione dei problemi, verifica in Version Information che il firmware sia aggiornato.",
+    videosIntro: "Sfoglia i video di riparazione per modulo: clicca su un'intestazione di modulo per espanderla o comprimerla. Ogni video ha un pulsante copia che copia il titolo e i link, pronto da incollare in un messaggio o un ticket.",
+    linkPending: "Video in arrivo",
+    driveNoLink: "Google Drive (link nella cartella condivisa)",
+    copyLinks: "Copia",
+    firmwareVersion: "Versione firmware",
+    appVersion: "Versione app",
+    estCompletion: "Completamento previsto del rilascio",
+    navCases: "Casi di studio",
+    casesIntro: "Clicca su una scheda per vedere l'analisi completa e la soluzione; clicca di nuovo per comprimerla.",
+    caseProblem: "Problema",
+    caseAnalysis: "Analisi",
+    caseSolution: "Soluzione",
+    caseFilterHeading: "Filtra per parola chiave",
+    caseFilterClear: "Cancella filtri",
+    caseNoResult: "Nessun caso corrisponde ai filtri selezionati.",
+    tagRtk: "RTK",
+    tagBumper: "Bumper",
+    tagCamera: "Camera",
+    tagBattery: "Battery",
+    tagDatacenter: "Data Center",
+    tagRecharge: "Recharge",
+    changelog: "Novità",
+    fullRollout: "Rilascio completo",
+  },
+  ru: {
+    siteName: "Yarbo Устранение неисправностей",
+    navIntro: "Обзор",
+    navTrouble: "Устранение неисправностей",
+    navCodes: "Коды ошибок",
+    navVideos: "Видео по ремонту",
+    navLearning: "Обучающие видео",
+    navUpdates: "Обновления",
+    searchPlaceholder: "Поиск по коду ошибки или ключевому слову, напр. B009 / bluetooth / граница",
+    searchHint: "Введите код ошибки, чтобы перейти прямо к нему; введите ключевое слово симптома, чтобы перейти к шагам устранения неисправности",
+    searchHintVideos: "Введите ключевое слово для поиска по названиям видео по ремонту",
+    searchHintUpdates: "Введите ключевое слово для поиска по содержанию обновлений",
+    searchPlaceholderVideos: "Поиск видео по ремонту, напр. камера / мотор / антенна",
+    searchPlaceholderUpdates: "Поиск по содержанию обновлений, напр. NetRTK / DC / Wi-Fi",
+    searchNoResult: "Совпадений не найдено. Код, которого нет в списке, означает, что удалённая предварительная диагностика пока невозможна — сделайте скриншот и сразу обратитесь в FSE.",
+    modeQA: "Пошаговый режим",
+    modeMindmap: "Режим карты",
+    start: "Начать диагностику",
+    restart: "Начать заново",
+    back: "Назад",
+    copy: "Скопировать",
+    copied: "Скопировано",
+    escalateTag: "Обратиться в FSE",
+    resolvedTag: "Решено",
+    infoTag: "Справка",
+    expand: "Развернуть",
+    collapse: "Свернуть",
+    emptyIntro: "Содержимое скоро появится.",
+    emptyVideos: "Видео по ремонту находятся в разработке и появятся здесь, как только будут готовы.",
+    emptyLearning: "Обучающие видео находятся в разработке и появятся здесь, как только будут готовы.",
+    emptyUpdates: "Пока нет обновлений прошивки/ПО. Новые версии будут опубликованы здесь сразу после выхода.",
+    codesIntro: "Нажмите на карточку, чтобы увидеть полные шаги устранения неисправности. Кнопка копирования на каждой карточке отправляет данные прямо в поддержку (FSE).",
+    codesFooter: "Код, которого нет в списке ниже, невозможно предварительно диагностировать удалённо — сделайте скриншот и сразу обратитесь в FSE.",
+    treeIntro: "Выберите категорию ниже, чтобы начать, или воспользуйтесь строкой поиска вверху, чтобы перейти сразу к теме.",
+    qaStepOf: "Шаг",
+    highFreq: "Частая ошибка",
+    versionCheck: "Перед устранением неисправности проверьте в Version Information, актуальна ли прошивка.",
+    videosIntro: "Просматривайте видео по ремонту по модулям — нажмите на заголовок модуля, чтобы развернуть или свернуть его. У каждого видео есть кнопка копирования названия и ссылок, готовых для вставки в сообщение или заявку.",
+    linkPending: "Видео скоро появится",
+    driveNoLink: "Google Диск (ссылка в общей папке)",
+    copyLinks: "Скопировать",
+    firmwareVersion: "Версия прошивки",
+    appVersion: "Версия приложения",
+    estCompletion: "Ожидаемое завершение развёртывания",
+    navCases: "Разбор случаев",
+    casesIntro: "Нажмите на карточку, чтобы увидеть полный анализ и решение; нажмите ещё раз, чтобы свернуть.",
+    caseProblem: "Проблема",
+    caseAnalysis: "Анализ",
+    caseSolution: "Решение",
+    caseFilterHeading: "Фильтр по ключевым словам",
+    caseFilterClear: "Сбросить фильтры",
+    caseNoResult: "Нет случаев, соответствующих выбранным фильтрам.",
+    tagRtk: "RTK",
+    tagBumper: "Bumper",
+    tagCamera: "Camera",
+    tagBattery: "Battery",
+    tagDatacenter: "Data Center",
+    tagRecharge: "Recharge",
+    changelog: "Что нового",
+    fullRollout: "Полное развёртывание",
   }
 };
 
@@ -291,7 +535,15 @@ const TREE = [
                         "ja": "有線充電器は緑ランプを表示しているが、Yarbo は依然としてライトが反応しない",
                         "ko": "유선 충전기는 녹색 표시등이 켜지지만 Yarbo는 여전히 아무 표시등 반응이 없음",
                         "detailJa": "有線充電器を交換して再度試してください。",
-                        "detailKo": "유선 충전기를 교체한 후 다시 시도하세요."
+                        "detailKo": "유선 충전기를 교체한 후 다시 시도하세요.",
+                        "de": "Das Ladekabel zeigt ein grünes Licht, aber Yarbo zeigt weiterhin keine Lichtreaktion",
+                        "fr": "Le chargeur filaire affiche un voyant vert, mais Yarbo ne montre toujours aucune réaction lumineuse",
+                        "it": "Il caricabatterie via cavo mostra una luce verde, ma Yarbo non mostra ancora alcuna reazione luminosa",
+                        "ru": "Проводное зарядное устройство показывает зелёный индикатор, но Yarbo по-прежнему никак не реагирует индикатором",
+                        "detailDe": "Das Ladekabel austauschen und es erneut versuchen.",
+                        "detailFr": "Remplacer le chargeur filaire et réessayer.",
+                        "detailIt": "Sostituire il caricabatterie via cavo e riprovare.",
+                        "detailRu": "Замените проводное зарядное устройство и повторите попытку."
                       },
                       {
                         "id": "wired-red-no-light",
@@ -303,19 +555,39 @@ const TREE = [
                         "ja": "有線充電器は赤ランプを表示しているが、Yarbo は依然としてライトが反応しない",
                         "ko": "유선 충전기는 빨간색 표시등이 켜지지만 Yarbo는 여전히 아무 표시등 반응이 없음",
                         "detailJa": "バッテリーを交換して再度試してください。",
-                        "detailKo": "배터리를 교체한 후 다시 시도하세요."
+                        "detailKo": "배터리를 교체한 후 다시 시도하세요.",
+                        "de": "Das Ladekabel zeigt ein rotes Licht, aber Yarbo zeigt weiterhin keine Lichtreaktion",
+                        "fr": "Le chargeur filaire affiche un voyant rouge, mais Yarbo ne montre toujours aucune réaction lumineuse",
+                        "it": "Il caricabatterie via cavo mostra una luce rossa, ma Yarbo non mostra ancora alcuna reazione luminosa",
+                        "ru": "Проводное зарядное устройство показывает красный индикатор, но Yarbo по-прежнему никак не реагирует индикатором",
+                        "detailDe": "Den Akku austauschen und es erneut versuchen.",
+                        "detailFr": "Remplacer la batterie et réessayer.",
+                        "detailIt": "Sostituire la batteria e riprovare.",
+                        "detailRu": "Замените аккумулятор и повторите попытку."
                       }
                     ],
                     "ja": "それでも反応がない",
-                    "ko": "여전히 반응 없음"
+                    "ko": "여전히 반응 없음",
+                    "de": "Immer noch keine Reaktion",
+                    "fr": "Toujours aucune réaction",
+                    "it": "Ancora nessuna reazione",
+                    "ru": "По-прежнему нет реакции"
                   }
                 ],
                 "ja": "バッテリーを抜き差ししてから再度試す",
-                "ko": "배터리를 뺐다가 다시 끼운 후 재시도"
+                "ko": "배터리를 뺐다가 다시 끼운 후 재시도",
+                "de": "Den Akku herausnehmen und wieder einsetzen, dann erneut versuchen",
+                "fr": "Retirer puis réinsérer la batterie, puis réessayer",
+                "it": "Rimuovere e reinserire la batteria, quindi riprovare",
+                "ru": "Извлеките и снова вставьте аккумулятор, затем повторите попытку"
               }
             ],
             "ja": "電源ボタンを押しても、ライトの点滅も含めて一切反応がない",
-            "ko": "전원 버튼을 눌러도 표시등 깜빡임을 포함해 전혀 반응이 없음"
+            "ko": "전원 버튼을 눌러도 표시등 깜빡임을 포함해 전혀 반응이 없음",
+            "de": "Beim Drücken der Einschalttaste reagiert das Gerät überhaupt nicht, nicht einmal ein Blinken der Leuchte",
+            "fr": "Appuyer sur le bouton d'alimentation ne provoque aucune réaction, pas même un clignotement du voyant",
+            "it": "Premendo il pulsante di accensione non si verifica alcuna reazione, nemmeno un lampeggio della spia",
+            "ru": "При нажатии кнопки питания нет вообще никакой реакции, даже мигания индикатора"
           },
           {
             "id": "has-light-response",
@@ -338,7 +610,15 @@ const TREE = [
                     "ja": "しばらく点滅した後、自然にライトが消える",
                     "ko": "잠시 깜빡이다가 저절로 꺼짐",
                     "detailJa": "トラブルシューティングの経過を記録・説明し、FSE に報告してください。",
-                    "detailKo": "문제 해결 과정을 기록하고 설명하여 FSE에 보고하세요."
+                    "detailKo": "문제 해결 과정을 기록하고 설명하여 FSE에 보고하세요.",
+                    "de": "Die Leuchte blinkt eine Weile und erlischt dann von selbst",
+                    "fr": "Le voyant clignote un moment puis s'éteint de lui-même",
+                    "it": "La spia lampeggia per un po' e poi si spegne da sola",
+                    "ru": "Индикатор мигает некоторое время, а затем гаснет сам по себе",
+                    "detailDe": "Den Fehlerbehebungsprozess dokumentieren und beschreiben, dann dem FSE mitteilen.",
+                    "detailFr": "Documenter et décrire la démarche de dépannage, puis en informer le FSE.",
+                    "detailIt": "Documentare e descrivere il processo di risoluzione dei problemi, quindi informare l'FSE.",
+                    "detailRu": "Задокументируйте и опишите ход диагностики, затем сообщите об этом FSE."
                   },
                   {
                     "id": "light-stays-on",
@@ -351,19 +631,39 @@ const TREE = [
                     "ja": "ライトが点滅し続けたままの状態",
                     "ko": "표시등이 계속 깜빡이는 상태가 유지됨",
                     "detailJa": "ユーザーに Yarbo を Wi-Fi ルーターの近くへ移動してもらい、FSE にバックエンドでの調査を依頼してください。",
-                    "detailKo": "사용자에게 Yarbo를 Wi-Fi 공유기에 더 가까운 곳으로 옮기게 하고, FSE에 백엔드 조사를 요청하세요."
+                    "detailKo": "사용자에게 Yarbo를 Wi-Fi 공유기에 더 가까운 곳으로 옮기게 하고, FSE에 백엔드 조사를 요청하세요.",
+                    "de": "Die Leuchte blinkt ununterbrochen weiter",
+                    "fr": "Le voyant continue de clignoter sans interruption",
+                    "it": "La spia continua a lampeggiare ininterrottamente",
+                    "ru": "Индикатор продолжает непрерывно мигать",
+                    "detailDe": "Den Nutzer bitten, Yarbo näher an den WLAN-Router zu bringen, und den FSE für eine Backend-Untersuchung kontaktieren.",
+                    "detailFr": "Demander à l'utilisateur de rapprocher Yarbo du routeur Wi-Fi, et contacter le FSE pour une investigation côté serveur.",
+                    "detailIt": "Chiedere all'utente di avvicinare Yarbo al router Wi-Fi e contattare l'FSE per un'indagine sul backend.",
+                    "detailRu": "Попросите пользователя переместить Yarbo ближе к Wi-Fi роутеру и обратитесь в FSE для диагностики на стороне сервера."
                   }
                 ],
                 "ja": "電源ボタンを 60 秒長押ししてから再起動し、正常に起動するか確認する",
-                "ko": "전원 버튼을 60초간 길게 누른 후 다시 켜서 정상적으로 부팅되는지 확인"
+                "ko": "전원 버튼을 60초간 길게 누른 후 다시 켜서 정상적으로 부팅되는지 확인",
+                "de": "Die Einschalttaste 60 Sekunden lang gedrückt halten, dann neu starten und prüfen, ob das Gerät normal hochfährt",
+                "fr": "Maintenir le bouton d'alimentation enfoncé pendant 60 secondes, puis redémarrer pour vérifier si l'appareil démarre normalement",
+                "it": "Tenere premuto il pulsante di accensione per 60 secondi, quindi riavviare per verificare se si accende normalmente",
+                "ru": "Удерживайте кнопку питания 60 секунд, затем перезапустите и проверьте, включается ли устройство нормально"
               }
             ],
             "ja": "電源ボタンを押すと反応があり、ライトも点灯する",
-            "ko": "전원 버튼을 누르면 반응이 있고 표시등도 켜짐"
+            "ko": "전원 버튼을 누르면 반응이 있고 표시등도 켜짐",
+            "de": "Beim Drücken der Einschalttaste reagiert das Gerät und die Leuchte geht an",
+            "fr": "Appuyer sur le bouton d'alimentation provoque une réaction et le voyant s'allume",
+            "it": "Premendo il pulsante di accensione si verifica una reazione e la spia si accende",
+            "ru": "При нажатии кнопки питания есть реакция, и индикатор загорается"
           }
         ],
         "ja": "「ready to work」と表示される前",
-        "ko": "\"ready to work\"가 표시되기 전"
+        "ko": "\"ready to work\"가 표시되기 전",
+        "de": "Bevor „ready to work\" angezeigt wird",
+        "fr": "Avant l'affichage de « ready to work »",
+        "it": "Prima che venga visualizzato \"ready to work\"",
+        "ru": "До появления сообщения «ready to work»"
       },
       {
         "id": "after-ready",
@@ -391,7 +691,15 @@ const TREE = [
                     "ja": "検出できない",
                     "ko": "검색되지 않음",
                     "detailJa": "スクリーンショットを証拠として保存し、FSE に連絡してください。",
-                    "detailKo": "스크린샷을 증거로 남기고 FSE에 문의하세요."
+                    "detailKo": "스크린샷을 증거로 남기고 FSE에 문의하세요.",
+                    "de": "Nicht gefunden",
+                    "fr": "Non détecté",
+                    "it": "Non rilevato",
+                    "ru": "Не обнаруживается",
+                    "detailDe": "Einen Screenshot als Nachweis erstellen und den FSE kontaktieren.",
+                    "detailFr": "Faire une capture d'écran comme preuve et contacter le FSE.",
+                    "detailIt": "Fare uno screenshot come prova e contattare l'FSE.",
+                    "detailRu": "Сделайте скриншот в качестве доказательства и обратитесь в FSE."
                   },
                   {
                     "id": "bt-found",
@@ -404,15 +712,31 @@ const TREE = [
                     "ja": "検出できる",
                     "ko": "검색됨",
                     "detailJa": "問題は解決しました。",
-                    "detailKo": "문제가 해결되었습니다."
+                    "detailKo": "문제가 해결되었습니다.",
+                    "de": "Wird gefunden",
+                    "fr": "Détecté",
+                    "it": "Rilevato",
+                    "ru": "Обнаруживается",
+                    "detailDe": "Problem gelöst.",
+                    "detailFr": "Problème résolu.",
+                    "detailIt": "Problema risolto.",
+                    "detailRu": "Проблема решена."
                   }
                 ],
                 "ja": "スマートフォンの Bluetooth をオフにしてから再度オンにし、「Yarbo Music」という名前の Bluetooth デバイスが検出できるか確認する",
-                "ko": "휴대폰 블루투스를 껐다가 다시 켠 후 \"Yarbo Music\"이라는 이름의 블루투스 기기가 검색되는지 확인"
+                "ko": "휴대폰 블루투스를 껐다가 다시 켠 후 \"Yarbo Music\"이라는 이름의 블루투스 기기가 검색되는지 확인",
+                "de": "Bluetooth am Smartphone aus- und wieder einschalten und prüfen, ob ein Bluetooth-Gerät namens „Yarbo Music\" gefunden wird",
+                "fr": "Désactiver puis réactiver le Bluetooth du téléphone, et vérifier si un appareil Bluetooth nommé « Yarbo Music » est détecté",
+                "it": "Disattivare e riattivare il Bluetooth del telefono, quindi verificare se viene rilevato un dispositivo Bluetooth chiamato \"Yarbo Music\"",
+                "ru": "Выключите и снова включите Bluetooth на телефоне и проверьте, обнаруживается ли устройство Bluetooth с именем «Yarbo Music»"
               }
             ],
             "ja": "Bluetooth に接続できない？",
-            "ko": "블루투스에 연결할 수 없나요?"
+            "ko": "블루투스에 연결할 수 없나요?",
+            "de": "Keine Bluetooth-Verbindung möglich?",
+            "fr": "Impossible de se connecter en Bluetooth ?",
+            "it": "Impossibile connettersi al Bluetooth?",
+            "ru": "Не удаётся подключиться по Bluetooth?"
           },
           {
             "id": "wifi-issue",
@@ -439,7 +763,15 @@ const TREE = [
                         "ja": "はい",
                         "ko": "예",
                         "detailJa": "Wi-Fi ネットワークを変更してください。",
-                        "detailKo": "Wi-Fi 네트워크를 변경하세요."
+                        "detailKo": "Wi-Fi 네트워크를 변경하세요.",
+                        "de": "Ja",
+                        "fr": "Oui",
+                        "it": "Sì",
+                        "ru": "Да",
+                        "detailDe": "Das WLAN-Netzwerk wechseln.",
+                        "detailFr": "Changer de réseau Wi-Fi.",
+                        "detailIt": "Cambiare rete Wi-Fi.",
+                        "detailRu": "Смените сеть Wi-Fi."
                       },
                       {
                         "id": "no-wifi-option",
@@ -451,27 +783,55 @@ const TREE = [
                         "ja": "いいえ ― Wi-Fi を変更できる環境がない",
                         "ko": "아니요 — Wi-Fi를 변경할 수 있는 환경이 아님",
                         "detailJa": "既存の Wi-Fi 接続情報を削除し、4G のみを使用してください。注意：Smart Vision の月間 4G 利用枠は 20 分です。超過した場合は FSE に連絡して手動でリセットしてもらう必要があります。",
-                        "detailKo": "기존 Wi-Fi 연결 기록을 삭제하고 4G만 사용하세요. 참고: Smart Vision의 월간 4G 데이터 한도는 20분이며, 초과 시 FSE에 문의하여 수동으로 리셋해야 합니다."
+                        "detailKo": "기존 Wi-Fi 연결 기록을 삭제하고 4G만 사용하세요. 참고: Smart Vision의 월간 4G 데이터 한도는 20분이며, 초과 시 FSE에 문의하여 수동으로 리셋해야 합니다.",
+                        "de": "Nein — kein anderes WLAN verfügbar",
+                        "fr": "Non — aucun autre Wi-Fi disponible",
+                        "it": "No — nessun'altra rete Wi-Fi disponibile",
+                        "ru": "Нет — нет возможности сменить Wi-Fi",
+                        "detailDe": "Den vorhandenen WLAN-Verbindungseintrag löschen und nur 4G verwenden. Hinweis: Das monatliche 4G-Kontingent von Smart Vision beträgt 20 Minuten; bei Überschreitung muss der FSE es manuell zurücksetzen.",
+                        "detailFr": "Supprimer l'enregistrement de connexion Wi-Fi existant et utiliser uniquement la 4G. Remarque : le quota mensuel de 4G de Smart Vision est de 20 minutes ; en cas de dépassement, contacter le FSE pour une réinitialisation manuelle.",
+                        "detailIt": "Eliminare la connessione Wi-Fi esistente e utilizzare solo il 4G. Nota: la quota mensile 4G di Smart Vision è di 20 minuti; in caso di superamento, contattare l'FSE per un ripristino manuale.",
+                        "detailRu": "Удалите существующее подключение Wi-Fi и используйте только 4G. Примечание: ежемесячная квота 4G для Smart Vision составляет 20 минут; при превышении обратитесь в FSE для ручного сброса."
                       }
                     ],
                     "ja": "スマートフォンのテザリングでは安定して接続できるか？",
-                    "ko": "휴대폰 핫스팟으로는 안정적으로 연결되나요?"
+                    "ko": "휴대폰 핫스팟으로는 안정적으로 연결되나요?",
+                    "de": "Ist die Verbindung über den mobilen Hotspot stabil?",
+                    "fr": "La connexion via le point d'accès mobile est-elle stable ?",
+                    "it": "La connessione tramite hotspot del telefono è stabile?",
+                    "ru": "Стабильно ли соединение через мобильную точку доступа?"
                   }
                 ],
                 "ja": "Wi-Fi ネットワークが不安定な場合、スマートフォンのテザリングで安定して接続できるか試す",
-                "ko": "Wi-Fi 네트워크가 불안정하면 휴대폰 핫스팟으로 안정적으로 연결되는지 시도"
+                "ko": "Wi-Fi 네트워크가 불안정하면 휴대폰 핫스팟으로 안정적으로 연결되는지 시도",
+                "de": "Das WLAN-Netzwerk ist instabil; mit einem mobilen Hotspot testen, ob eine stabile Verbindung möglich ist",
+                "fr": "Le réseau Wi-Fi est instable ; tester avec un point d'accès mobile pour voir si la connexion est stable",
+                "it": "La rete Wi-Fi è instabile; provare con un hotspot del telefono per verificare se la connessione è stabile",
+                "ru": "Сеть Wi-Fi нестабильна; попробуйте использовать мобильную точку доступа, чтобы проверить стабильность соединения"
               }
             ],
             "ja": "Wi-Fi に接続できない？",
-            "ko": "Wi-Fi에 연결할 수 없나요?"
+            "ko": "Wi-Fi에 연결할 수 없나요?",
+            "de": "Keine WLAN-Verbindung möglich?",
+            "fr": "Impossible de se connecter au Wi-Fi ?",
+            "it": "Impossibile connettersi al Wi-Fi?",
+            "ru": "Не удаётся подключиться к Wi-Fi?"
           }
         ],
         "ja": "「ready to work」と表示された後",
-        "ko": "\"ready to work\"가 표시된 후"
+        "ko": "\"ready to work\"가 표시된 후",
+        "de": "Nachdem „ready to work\" angezeigt wurde",
+        "fr": "Après l'affichage de « ready to work »",
+        "it": "Dopo che viene visualizzato \"ready to work\"",
+        "ru": "После появления сообщения «ready to work»"
       }
     ],
     "ja": "Yarbo 電源が入らない／起動の問題",
-    "ko": "Yarbo 전원이 켜지지 않음 / 부팅 문제"
+    "ko": "Yarbo 전원이 켜지지 않음 / 부팅 문제",
+    "de": "Yarbo lässt sich nicht einschalten / Startprobleme",
+    "fr": "Yarbo ne démarre pas / Problèmes de démarrage",
+    "it": "Yarbo non si accende / Problemi di avvio",
+    "ru": "Yarbo не включается / Проблемы с загрузкой"
   },
   {
     "id": "navigation",
@@ -515,11 +875,19 @@ const TREE = [
                                 "leaf": true,
                                 "escalate": true,
                                 "ja": "タイヤの空転が原因で境界逸脱が発生した可能性があります。FSE に連絡してログを取得・解析してもらってください",
-                                "ko": "바퀴 미끄러짐으로 인해 경계를 이탈했을 가능성이 있습니다. FSE에 문의하여 로그를 수집해 분석을 요청하세요"
+                                "ko": "바퀴 미끄러짐으로 인해 경계를 이탈했을 가능성이 있습니다. FSE에 문의하여 로그를 수집해 분석을 요청하세요",
+                                "de": "Die Grenzüberschreitung wurde möglicherweise durch Radschlupf verursacht. Den FSE kontaktieren, um Protokolle zur Analyse zu erfassen",
+                                "fr": "La sortie de limite peut être due à un patinage des roues. Contacter le FSE pour récupérer les journaux à des fins d'analyse",
+                                "it": "L'uscita dal confine potrebbe essere causata dallo slittamento delle ruote. Contattare l'FSE per raccogliere i log da analizzare",
+                                "ru": "Выход за границу мог быть вызван пробуксовкой колёс. Обратитесь в FSE для сбора логов и анализа"
                               }
                             ],
                             "ja": "戻れる ― マップ上の位置と実際の位置が一致している",
-                            "ko": "가능함 — 지도상 위치와 실제 위치가 일치함"
+                            "ko": "가능함 — 지도상 위치와 실제 위치가 일치함",
+                            "de": "Ja — die Position auf der Karte stimmt mit der tatsächlichen Position überein",
+                            "fr": "Oui — la position sur la carte correspond à la position réelle",
+                            "it": "Sì — la posizione sulla mappa corrisponde alla posizione reale",
+                            "ru": "Да — положение на карте совпадает с реальным положением"
                           },
                           {
                             "id": "recharge-fail-map-inconsistent",
@@ -532,23 +900,43 @@ const TREE = [
                                 "en": "Map drift caused the boundary crossing — manually drive the machine onto the docking station and tap Correct Map Drift",
                                 "leaf": true,
                                 "ja": "マップドリフトによる境界逸脱です。手動で機器を docking station まで移動させ、Correct Map Drift をタップしてください",
-                                "ko": "지도 드리프트로 인한 경계 이탈입니다. 기기를 수동으로 도킹 스테이션까지 이동시킨 후 Correct Map Drift를 탭하세요"
+                                "ko": "지도 드리프트로 인한 경계 이탈입니다. 기기를 수동으로 도킹 스테이션까지 이동시킨 후 Correct Map Drift를 탭하세요",
+                                "de": "Die Grenzüberschreitung wurde durch Kartendrift verursacht. Das Gerät manuell zur Ladestation fahren und auf „Correct Map Drift\" tippen",
+                                "fr": "La sortie de limite est due à une dérive de la carte. Conduire manuellement l'appareil jusqu'à la station de charge et appuyer sur « Correct Map Drift »",
+                                "it": "L'uscita dal confine è causata dalla deriva della mappa. Portare manualmente il dispositivo alla stazione di ricarica e toccare \"Correct Map Drift\"",
+                                "ru": "Выход за границу вызван дрейфом карты. Вручную подведите устройство к зарядной станции и нажмите «Correct Map Drift»"
                               }
                             ],
                             "ja": "戻れない ― マップ上の Yarbo の位置が実際の位置と一致していない",
-                            "ko": "불가능함 — 지도상 Yarbo 위치가 실제 위치와 일치하지 않음"
+                            "ko": "불가능함 — 지도상 Yarbo 위치가 실제 위치와 일치하지 않음",
+                            "de": "Nein — die Position von Yarbo auf der Karte stimmt nicht mit der tatsächlichen Position überein",
+                            "fr": "Non — la position de Yarbo sur la carte ne correspond pas à la position réelle",
+                            "it": "No — la posizione di Yarbo sulla mappa non corrisponde a quella reale",
+                            "ru": "Нет — положение Yarbo на карте не совпадает с реальным положением"
                           }
                         ],
                         "ja": "正常に充電へ戻れるか？",
-                        "ko": "정상적으로 복귀 충전이 되나요?"
+                        "ko": "정상적으로 복귀 충전이 되나요?",
+                        "de": "Lädt es normal an der Station auf?",
+                        "fr": "La recharge se fait-elle normalement ?",
+                        "it": "Si ricarica normalmente?",
+                        "ru": "Заряжается ли устройство нормально?"
                       }
                     ],
                     "ja": "docking station へ戻って充電する",
-                    "ko": "도킹 스테이션으로 복귀시켜 충전"
+                    "ko": "도킹 스테이션으로 복귀시켜 충전",
+                    "de": "Zur Ladestation zurückfahren (recharge)",
+                    "fr": "Retourner à la station de charge (recharge)",
+                    "it": "Tornare alla stazione di ricarica (recharge)",
+                    "ru": "Вернуть на зарядную станцию (recharge)"
                   }
                 ],
                 "ja": "はい",
-                "ko": "예"
+                "ko": "예",
+                "de": "Ja",
+                "fr": "Oui",
+                "it": "Sì",
+                "ru": "Да"
               },
               {
                 "id": "status-not-4-boundary",
@@ -571,11 +959,19 @@ const TREE = [
                             "en": "Draw a Vision Zone and change the obstacle-avoidance mode to prevent this from happening again",
                             "leaf": true,
                             "ja": "Vision Zone を描画して障害物回避モードを変更し、再発を防止してください",
-                            "ko": "Vision Zone을 그려 장애물 회피 모드를 변경하여 재발을 방지하세요"
+                            "ko": "Vision Zone을 그려 장애물 회피 모드를 변경하여 재발을 방지하세요",
+                            "de": "Eine Vision Zone einzeichnen und den Hindernisvermeidungsmodus ändern, um dies künftig zu vermeiden",
+                            "fr": "Dessiner une Vision Zone et modifier le mode d'évitement d'obstacles pour éviter que cela ne se reproduise",
+                            "it": "Disegnare una Vision Zone e modificare la modalità di evitamento degli ostacoli per evitare che si ripeta",
+                            "ru": "Нарисуйте Vision Zone и измените режим объезда препятствий, чтобы это не повторилось"
                           }
                         ],
                         "ja": "ある",
-                        "ko": "있음"
+                        "ko": "있음",
+                        "de": "Ja",
+                        "fr": "Oui",
+                        "it": "Sì",
+                        "ru": "Да"
                       },
                       {
                         "id": "top-not-blocked",
@@ -589,27 +985,51 @@ const TREE = [
                             "leaf": true,
                             "escalate": true,
                             "ja": "証拠を保存し、FSE に連絡してください",
-                            "ko": "증거를 보존하고 FSE에 문의하세요"
+                            "ko": "증거를 보존하고 FSE에 문의하세요",
+                            "de": "Beweise sichern und den FSE kontaktieren",
+                            "fr": "Conserver les preuves et contacter le FSE",
+                            "it": "Conservare le prove e contattare l'FSE",
+                            "ru": "Сохраните доказательства и обратитесь в FSE"
                           }
                         ],
                         "ja": "いいえ",
-                        "ko": "아니요"
+                        "ko": "아니요",
+                        "de": "Nein",
+                        "fr": "Non",
+                        "it": "No",
+                        "ru": "Нет"
                       }
                     ],
                     "ja": "Yarbo の上部に遮蔽物はあるか？",
-                    "ko": "Yarbo 상단에 가림막이 있나요?"
+                    "ko": "Yarbo 상단에 가림막이 있나요?",
+                    "de": "Gibt es eine Verdeckung über Yarbo?",
+                    "fr": "Y a-t-il une obstruction au-dessus de Yarbo ?",
+                    "it": "C'è un'ostruzione sopra Yarbo?",
+                    "ru": "Есть ли препятствие над Yarbo?"
                   }
                 ],
                 "ja": "いいえ",
-                "ko": "아니요"
+                "ko": "아니요",
+                "de": "Nein",
+                "fr": "Non",
+                "it": "No",
+                "ru": "Нет"
               }
             ],
             "ja": "発生した具体的な時刻を記録し、その場で RTK の status が 4 かどうかを確認する",
-            "ko": "발생한 정확한 시간을 기록하고, 그 자리에서 RTK의 status가 4인지 확인"
+            "ko": "발생한 정확한 시간을 기록하고, 그 자리에서 RTK의 status가 4인지 확인",
+            "de": "Den genauen Zeitpunkt notieren und sofort prüfen, ob der RTK-Status 4 ist",
+            "fr": "Noter l'heure exacte de l'incident et vérifier immédiatement si le statut RTK est 4",
+            "it": "Annotare l'ora esatta dell'evento e verificare immediatamente se lo stato RTK è 4",
+            "ru": "Зафиксируйте точное время события и сразу проверьте, равен ли статус RTK 4"
           }
         ],
         "ja": "境界逸脱",
-        "ko": "경계 이탈"
+        "ko": "경계 이탈",
+        "de": "Grenzüberschreitung",
+        "fr": "Sortie de limite",
+        "it": "Uscita dal confine",
+        "ru": "Выход за границу"
       },
       {
         "id": "heading-gps-issue",
@@ -662,7 +1082,11 @@ const TREE = [
                                             "en": "1. The exact time it happened",
                                             "leaf": true,
                                             "ja": "1. 発生した具体的な時刻は？",
-                                            "ko": "1. 발생한 정확한 시간은?"
+                                            "ko": "1. 발생한 정확한 시간은?",
+                                            "de": "1. Der genaue Zeitpunkt des Auftretens?",
+                                            "fr": "1. L'heure exacte de l'incident ?",
+                                            "it": "1. L'orario esatto in cui si è verificato?",
+                                            "ru": "1. Точное время события?"
                                           },
                                           {
                                             "id": "report-video",
@@ -670,7 +1094,11 @@ const TREE = [
                                             "en": "2. A video of the surrounding environment where it occurred",
                                             "leaf": true,
                                             "ja": "2. 発生場所の周辺環境の映像",
-                                            "ko": "2. 발생 장소 주변 환경 영상"
+                                            "ko": "2. 발생 장소 주변 환경 영상",
+                                            "de": "2. Ein Video der Umgebung am Ort des Geschehens",
+                                            "fr": "2. Une vidéo de l'environnement du lieu de l'incident",
+                                            "it": "2. Un video dell'ambiente circostante nel luogo dell'evento",
+                                            "ru": "2. Видео окружающей обстановки в месте события"
                                           },
                                           {
                                             "id": "report-frequency",
@@ -678,19 +1106,35 @@ const TREE = [
                                             "en": "3. Whether it's occasional or frequent",
                                             "leaf": true,
                                             "ja": "3. まれに再現するか、それとも頻繁に再現するか？",
-                                            "ko": "3. 가끔 재현되나요, 아니면 자주 재현되나요?"
+                                            "ko": "3. 가끔 재현되나요, 아니면 자주 재현되나요?",
+                                            "de": "3. Tritt es gelegentlich oder häufig erneut auf?",
+                                            "fr": "3. Se reproduit-il occasionnellement ou fréquemment ?",
+                                            "it": "3. Si ripresenta occasionalmente o frequentemente?",
+                                            "ru": "3. Повторяется ли это изредка или часто?"
                                           }
                                         ],
                                         "ja": "RTK ハードウェア自体に問題はありません。多くの場合、機器が木陰など遮蔽物のある場所を走行していることが原因です。それ以外の異常の場合は、以下の 3 点を FSE に提供してください",
-                                        "ko": "RTK 하드웨어 자체에는 문제가 없습니다. 대개 기기가 나무 그늘 등 가림막이 있는 곳을 주행하고 있기 때문입니다. 그 외의 이상 상황이라면 다음 세 가지 정보를 FSE에 제공해야 합니다"
+                                        "ko": "RTK 하드웨어 자체에는 문제가 없습니다. 대개 기기가 나무 그늘 등 가림막이 있는 곳을 주행하고 있기 때문입니다. 그 외의 이상 상황이라면 다음 세 가지 정보를 FSE에 제공해야 합니다",
+                                        "de": "Mit der RTK-Hardware ist nichts falsch — meist liegt es daran, dass das Gerät im schattigen Bereich unter Bäumen fährt. Bei anderen Anomalien müssen dem FSE folgende drei Angaben bereitgestellt werden",
+                                        "fr": "Le matériel RTK n'a pas de problème — cela est généralement dû au fait que l'appareil circule à l'ombre d'arbres. En cas d'autre anomalie, fournir les trois éléments suivants au FSE",
+                                        "it": "L'hardware RTK non presenta problemi: di solito è dovuto al fatto che il dispositivo si muove all'ombra di alberi. In caso di altre anomalie, fornire questi tre elementi all'FSE",
+                                        "ru": "С аппаратной частью RTK всё в порядке — обычно это связано с тем, что устройство едет в тени деревьев. При других отклонениях необходимо предоставить FSE следующие три пункта"
                                       }
                                     ],
                                     "ja": "はい",
-                                    "ko": "예"
+                                    "ko": "예",
+                                    "de": "Ja",
+                                    "fr": "Oui",
+                                    "it": "Sì",
+                                    "ru": "Да"
                                   }
                                 ],
                                 "ja": "L2 ≠ 0",
-                                "ko": "L2 ≠ 0"
+                                "ko": "L2 ≠ 0",
+                                "de": "L2 ≠ 0",
+                                "fr": "L2 ≠ 0",
+                                "it": "L2 ≠ 0",
+                                "ru": "L2 ≠ 0"
                               },
                               {
                                 "id": "l2-zero",
@@ -704,15 +1148,27 @@ const TREE = [
                                     "leaf": true,
                                     "escalate": true,
                                     "ja": "右側アンテナに問題があります。右側アンテナを締め直すか、アンテナ内部の水分を拭き取ってください。改善しない場合は、状況を説明しスクリーンショットを添えて FSE に送ってください",
-                                    "ko": "오른쪽 안테나에 문제가 있습니다. 오른쪽 안테나를 조이거나 안테나 내부의 물기를 닦아내세요. 개선되지 않으면 상황을 설명하고 스크린샷을 첨부해 FSE에 보내세요"
+                                    "ko": "오른쪽 안테나에 문제가 있습니다. 오른쪽 안테나를 조이거나 안테나 내부의 물기를 닦아내세요. 개선되지 않으면 상황을 설명하고 스크린샷을 첨부해 FSE에 보내세요",
+                                    "de": "Die rechte Antenne hat ein Problem: die rechte Antenne festziehen oder Wasser im Inneren der Antenne trocknen. Bei keiner Besserung das Problem beschreiben und einen Screenshot an den FSE senden",
+                                    "fr": "L'antenne droite présente un problème : serrer l'antenne droite ou essuyer l'eau à l'intérieur de l'antenne. Si cela ne s'améliore pas, décrire le problème et envoyer une capture d'écran au FSE",
+                                    "it": "L'antenna destra ha un problema: stringere l'antenna destra o asciugare l'acqua all'interno dell'antenna. Se non migliora, descrivere il problema e inviare uno screenshot all'FSE",
+                                    "ru": "Проблема с правой антенной: затяните правую антенну или удалите влагу внутри антенны. Если улучшения нет, опишите проблему и отправьте скриншот в FSE"
                                   }
                                 ],
                                 "ja": "L2 = 0",
-                                "ko": "L2 = 0"
+                                "ko": "L2 = 0",
+                                "de": "L2 = 0",
+                                "fr": "L2 = 0",
+                                "it": "L2 = 0",
+                                "ru": "L2 = 0"
                               }
                             ],
                             "ja": "はい",
-                            "ko": "예"
+                            "ko": "예",
+                            "de": "Ja",
+                            "fr": "Oui",
+                            "it": "Sì",
+                            "ru": "Да"
                           },
                           {
                             "id": "status-4-no",
@@ -726,19 +1182,35 @@ const TREE = [
                                 "leaf": true,
                                 "escalate": true,
                                 "ja": "左側アンテナに問題があります。左側アンテナを締め直すか、アンテナ内部の水分を拭き取ってください。改善しない場合は、状況を説明しスクリーンショットを添えて FSE に送ってください",
-                                "ko": "왼쪽 안테나에 문제가 있습니다. 왼쪽 안테나를 조이거나 안테나 내부의 물기를 닦아내세요. 개선되지 않으면 상황을 설명하고 스크린샷을 첨부해 FSE에 보내세요"
+                                "ko": "왼쪽 안테나에 문제가 있습니다. 왼쪽 안테나를 조이거나 안테나 내부의 물기를 닦아내세요. 개선되지 않으면 상황을 설명하고 스크린샷을 첨부해 FSE에 보내세요",
+                                "de": "Die linke Antenne hat ein Problem: die linke Antenne festziehen oder Wasser im Inneren der Antenne trocknen. Bei keiner Besserung das Problem beschreiben und einen Screenshot an den FSE senden",
+                                "fr": "L'antenne gauche présente un problème : serrer l'antenne gauche ou essuyer l'eau à l'intérieur de l'antenne. Si cela ne s'améliore pas, décrire le problème et envoyer une capture d'écran au FSE",
+                                "it": "L'antenna sinistra ha un problema: stringere l'antenna sinistra o asciugare l'acqua all'interno dell'antenna. Se non migliora, descrivere il problema e inviare uno screenshot all'FSE",
+                                "ru": "Проблема с левой антенной: затяните левую антенну или удалите влагу внутри антенны. Если улучшения нет, опишите проблему и отправьте скриншот в FSE"
                               }
                             ],
                             "ja": "いいえ",
-                            "ko": "아니요"
+                            "ko": "아니요",
+                            "de": "Nein",
+                            "fr": "Non",
+                            "it": "No",
+                            "ru": "Нет"
                           }
                         ],
                         "ja": "status は 4 か？",
-                        "ko": "status가 4인가요?"
+                        "ko": "status가 4인가요?",
+                        "de": "Ist status gleich 4?",
+                        "fr": "Le statut est-il égal à 4 ?",
+                        "it": "Lo status è uguale a 4?",
+                        "ru": "Равен ли status 4?"
                       }
                     ],
                     "ja": "はい",
-                    "ko": "예"
+                    "ko": "예",
+                    "de": "Ja",
+                    "fr": "Oui",
+                    "it": "Sì",
+                    "ru": "Да"
                   },
                   {
                     "id": "mode-true-no",
@@ -756,31 +1228,59 @@ const TREE = [
                             "en": "Restart the machine and observe the data again",
                             "leaf": true,
                             "ja": "機器を再起動し、再度データを確認してください",
-                            "ko": "기기를 재부팅한 후 다시 데이터를 확인하세요"
+                            "ko": "기기를 재부팅한 후 다시 데이터를 확인하세요",
+                            "de": "Das Gerät neu starten und die Daten erneut beobachten",
+                            "fr": "Redémarrer l'appareil et observer à nouveau les données",
+                            "it": "Riavviare il dispositivo e osservare nuovamente i dati",
+                            "ru": "Перезапустите устройство и снова понаблюдайте за данными"
                           }
                         ],
                         "ja": "netrtk",
-                        "ko": "netrtk"
+                        "ko": "netrtk",
+                        "de": "netrtk",
+                        "fr": "netrtk",
+                        "it": "netrtk",
+                        "ru": "netrtk"
                       }
                     ],
                     "ja": "いいえ",
-                    "ko": "아니요"
+                    "ko": "아니요",
+                    "de": "Nein",
+                    "fr": "Non",
+                    "it": "No",
+                    "ru": "Нет"
                   }
                 ],
                 "ja": "mode は true か？",
-                "ko": "mode가 true인가요?"
+                "ko": "mode가 true인가요?",
+                "de": "Ist mode auf true gesetzt?",
+                "fr": "Le mode est-il sur true ?",
+                "it": "Il mode è impostato su true?",
+                "ru": "Равен ли mode значению true?"
               }
             ],
             "ja": "アプリが online 状態になったら、Setting → Diagnose Tools → RTK Part に入ります。Yarbo の電源を入れた直後の場合は、データ収集が安定するまで 3～5 分お待ちください",
-            "ko": "앱이 online 상태가 되면 Setting → Diagnose Tools → RTK Part로 들어가세요. Yarbo를 막 켠 경우 데이터 수집이 안정될 때까지 3~5분 기다려야 합니다"
+            "ko": "앱이 online 상태가 되면 Setting → Diagnose Tools → RTK Part로 들어가세요. Yarbo를 막 켠 경우 데이터 수집이 안정될 때까지 3~5분 기다려야 합니다",
+            "de": "Sobald die App online ist, zu Setting → Diagnose Tools → RTK Part gehen. Wurde Yarbo gerade eingeschaltet, 3–5 Minuten warten, bis sich die Datenerfassung stabilisiert",
+            "fr": "Une fois que l'application est en ligne, aller dans Setting → Diagnose Tools → RTK Part. Si Yarbo vient d'être allumé, attendre 3 à 5 minutes que la collecte de données se stabilise",
+            "it": "Una volta che l'app è online, andare su Setting → Diagnose Tools → RTK Part. Se Yarbo è stato appena acceso, attendere 3-5 minuti affinché la raccolta dati si stabilizzi",
+            "ru": "Как только приложение выйдет в онлайн, перейдите в Setting → Diagnose Tools → RTK Part. Если Yarbo только что включили, подождите 3–5 минут для стабилизации сбора данных"
           }
         ],
         "ja": "走行方向異常／GPS 異常",
-        "ko": "주행 방향 이상 / GPS 이상"
+        "ko": "주행 방향 이상 / GPS 이상",
+        "de": "Fahrtrichtungsfehler / GPS-Störung",
+        "fr": "Anomalie de direction / Anomalie GPS",
+        "it": "Anomalia di direzione / Anomalia GPS",
+        "ru": "Аномалия направления движения / Аномалия GPS"
       }
     ],
     "ja": "境界逸脱／走行方向異常／GPS 異常",
-    "ko": "경계 이탈 / 주행 방향 이상 / GPS 이상"
+    "ko": "경계 이탈 / 주행 방향 이상 / GPS 이상",
+    "de": "Grenzüberschreitung / Fahrtrichtungsfehler / GPS-Störung",
+    "fr": "Sortie de limite / Anomalie de direction / Anomalie GPS",
+    "it": "Uscita dal confine / Anomalia di direzione / Anomalia GPS",
+    "ru": "Выход за границу / Аномалия направления движения / Аномалия GPS"
   },
   {
     "id": "camera",
@@ -804,11 +1304,19 @@ const TREE = [
                 "leaf": true,
                 "escalate": true,
                 "ja": "スクリーンショットを撮って FSE に送り、作業中に切断したのか、それとも作業中でない時に切断したのか、また頻繁に発生するのか、まれに発生するのかを説明してください",
-                "ko": "스크린샷을 찍어 FSE에 전달하고, 작업 중 연결이 끊겼는지 아닌지, 자주 발생하는지 가끔 발생하는지 설명하세요"
+                "ko": "스크린샷을 찍어 FSE에 전달하고, 작업 중 연결이 끊겼는지 아닌지, 자주 발생하는지 가끔 발생하는지 설명하세요",
+                "de": "Einen Screenshot machen und an den FSE senden, dabei angeben, ob die Verbindung während oder außerhalb des Betriebs unterbrochen wurde und ob es häufig oder gelegentlich auftritt",
+                "fr": "Faire une capture d'écran et l'envoyer au FSE, en précisant si la déconnexion s'est produite pendant ou en dehors du fonctionnement, et si cela se reproduit fréquemment ou occasionnellement",
+                "it": "Fare uno screenshot e inviarlo all'FSE, specificando se la disconnessione è avvenuta durante o al di fuori del funzionamento, e se si ripresenta frequentemente o occasionalmente",
+                "ru": "Сделайте скриншот и отправьте в FSE, указав, произошло ли отключение во время работы или вне её, и происходит ли это часто или изредка"
               }
             ],
             "ja": "0 の場合",
-            "ko": "0인 경우"
+            "ko": "0인 경우",
+            "de": "Falls 0",
+            "fr": "Si 0",
+            "it": "Se è 0",
+            "ru": "Если 0"
           },
           {
             "id": "state-not-zero",
@@ -822,19 +1330,35 @@ const TREE = [
                 "leaf": true,
                 "escalate": true,
                 "ja": "機器を再起動してください。改善しない場合は FSE にエスカレーションしてください",
-                "ko": "기기를 재부팅하세요. 개선되지 않으면 FSE로 에스컬레이션하세요"
+                "ko": "기기를 재부팅하세요. 개선되지 않으면 FSE로 에스컬레이션하세요",
+                "de": "Das Gerät neu starten; bei keiner Besserung an den FSE eskalieren",
+                "fr": "Redémarrer l'appareil ; si aucune amélioration, escalader au FSE",
+                "it": "Riavviare il dispositivo; se non migliora, inoltrare all'FSE",
+                "ru": "Перезапустите устройство; если улучшения нет, эскалируйте в FSE"
               }
             ],
             "ja": "0 でない場合",
-            "ko": "0이 아닌 경우"
+            "ko": "0이 아닌 경우",
+            "de": "Falls nicht 0",
+            "fr": "Si différent de 0",
+            "it": "Se non è 0",
+            "ru": "Если не 0"
           }
         ],
         "ja": "Diagnose Tools の Camera 項目を開き、右側の state が 0 かどうかを確認する",
-        "ko": "Diagnose Tools의 Camera 항목에서 오른쪽 state 값이 0인지 확인"
+        "ko": "Diagnose Tools의 Camera 항목에서 오른쪽 state 값이 0인지 확인",
+        "de": "Im Bereich Camera der Diagnose Tools prüfen, ob der Wert state rechts 0 ist",
+        "fr": "Dans la section Camera des Diagnose Tools, vérifier si la valeur state à droite est 0",
+        "it": "Nella sezione Camera di Diagnose Tools, verificare se il valore state a destra è 0",
+        "ru": "В разделе Camera в Diagnose Tools проверьте, равно ли значение state справа 0"
       }
     ],
     "ja": "カメラの画面が真っ黒になる",
-    "ko": "카메라 화면이 검게 나옴"
+    "ko": "카메라 화면이 검게 나옴",
+    "de": "Kamerabildschirm bleibt schwarz",
+    "fr": "Écran de la caméra noir",
+    "it": "Schermo della fotocamera nero",
+    "ru": "Чёрный экран камеры"
   },
   {
     "id": "charging",
@@ -856,7 +1380,15 @@ const TREE = [
             "ja": "Pathway の設定が異常でないか確認する",
             "ko": "Pathway 설정에 이상이 없는지 확인",
             "detailJa": "Ultrasonic Sensor をオフにすることをお勧めします。",
-            "detailKo": "Ultrasonic Sensor를 끄는 것을 권장합니다."
+            "detailKo": "Ultrasonic Sensor를 끄는 것을 권장합니다.",
+            "de": "Prüfen, ob die Pathway-Einstellung fehlerhaft ist",
+            "fr": "Vérifier si le paramètre Pathway est anormal",
+            "it": "Verificare se l'impostazione Pathway è anomala",
+            "ru": "Проверьте, не является ли настройка Pathway некорректной",
+            "detailDe": "Es wird empfohlen, den Ultrasonic Sensor zu deaktivieren.",
+            "detailFr": "Il est recommandé de désactiver le capteur à ultrasons (Ultrasonic Sensor).",
+            "detailIt": "Si consiglia di disattivare l'Ultrasonic Sensor.",
+            "detailRu": "Рекомендуется отключить Ultrasonic Sensor."
           },
           {
             "id": "pathway-rule",
@@ -868,11 +1400,23 @@ const TREE = [
             "ja": "Pathway の描画が「一対一」の原則に従っているか確認する",
             "ko": "Pathway 그리기가 \"일대일\" 원칙을 따르고 있는지 확인",
             "detailJa": "原則：1 つの area は 1 つの area に接続し、1 つの area は 1 つの docking station に接続します。",
-            "detailKo": "원칙: 하나의 area는 하나의 area에 연결되고, 하나의 area는 하나의 docking station에 연결됩니다."
+            "detailKo": "원칙: 하나의 area는 하나의 area에 연결되고, 하나의 area는 하나의 docking station에 연결됩니다.",
+            "de": "Prüfen, ob beim Zeichnen des Pathway das Eins-zu-eins-Prinzip eingehalten wurde",
+            "fr": "Vérifier si le tracé du Pathway respecte le principe un pour un",
+            "it": "Verificare se il disegno del Pathway rispetta il principio uno a uno",
+            "ru": "Проверьте, соблюдается ли при построении Pathway принцип «один к одному»",
+            "detailDe": "Prinzip: Ein Bereich (area) verbindet sich mit einem Bereich, ein Bereich verbindet sich mit einer Ladestation.",
+            "detailFr": "Principe : une zone (area) se connecte à une zone, une zone se connecte à une station de charge.",
+            "detailIt": "Principio: un'area si collega a un'altra area, un'area si collega a una stazione di ricarica.",
+            "detailRu": "Принцип: одна зона (area) соединяется с одной зоной, одна зона соединяется с одной зарядной станцией."
           }
         ],
         "ja": "充電へ戻る途中で失敗する",
-        "ko": "충전소로 복귀하는 도중 실패"
+        "ko": "충전소로 복귀하는 도중 실패",
+        "de": "Fehlschlag auf dem Rückweg zur Ladestation",
+        "fr": "Échec sur le chemin de retour à la station de charge",
+        "it": "Errore durante il rientro alla stazione di ricarica",
+        "ru": "Сбой при возвращении на зарядную станцию"
       },
       {
         "id": "docking-fail",
@@ -890,11 +1434,19 @@ const TREE = [
                 "en": "There's an issue with the charging plate's positioning coil",
                 "leaf": true,
                 "ja": "充電プレートの位置決めコイルの問題",
-                "ko": "충전 패드 위치 인식 코일 문제"
+                "ko": "충전 패드 위치 인식 코일 문제",
+                "de": "Problem mit der Positionierungsspule der Ladeplatte",
+                "fr": "Problème de bobine de positionnement de la plaque de charge",
+                "it": "Problema alla bobina di posizionamento della piastra di ricarica",
+                "ru": "Проблема с катушкой позиционирования зарядной платформы"
               }
             ],
             "ja": "機器は中央に合わせられないが、手動操作では充電できる",
-            "ko": "기기가 중앙에 맞춰지지 않지만 수동 조작으로는 충전이 됨"
+            "ko": "기기가 중앙에 맞춰지지 않지만 수동 조작으로는 충전이 됨",
+            "de": "Das Gerät kann sich nicht zentrieren, aber mit manueller Steuerung kann es laden",
+            "fr": "L'appareil ne peut pas se centrer, mais peut charger en mode manuel",
+            "it": "Il dispositivo non riesce a centrarsi, ma può caricarsi con il controllo manuale",
+            "ru": "Устройство не может отцентрироваться, но может заряжаться при ручном управлении"
           },
           {
             "id": "can-center-cant-charge",
@@ -913,11 +1465,19 @@ const TREE = [
                     "leaf": true,
                     "escalate": true,
                     "ja": "FSE に連絡して現象を説明し、リモートで調査してもらってください",
-                    "ko": "FSE에 연락해 현상을 설명하고 원격으로 조사를 요청하세요"
+                    "ko": "FSE에 연락해 현상을 설명하고 원격으로 조사를 요청하세요",
+                    "de": "Den FSE kontaktieren, das Phänomen beschreiben und eine Ferndiagnose durchführen lassen",
+                    "fr": "Contacter le FSE, décrire le phénomène et procéder à un dépannage à distance",
+                    "it": "Contattare l'FSE, descrivere il fenomeno e procedere con la risoluzione da remoto",
+                    "ru": "Обратитесь в FSE, опишите проявление и проведите удалённую диагностику"
                   }
                 ],
                 "ja": "RTK は正確で、マップ上の位置も実際と一致している",
-                "ko": "RTK가 정확하고 지도상 위치도 실제와 일치함"
+                "ko": "RTK가 정확하고 지도상 위치도 실제와 일치함",
+                "de": "RTK ist präzise, und die Kartenposition stimmt mit der Realität überein",
+                "fr": "Le RTK est précis et la position sur la carte correspond à la réalité",
+                "it": "L'RTK è preciso e la posizione sulla mappa corrisponde alla realtà",
+                "ru": "RTK точен, и положение на карте совпадает с реальностью"
               },
               {
                 "id": "rtk-accurate-inconsistent",
@@ -940,7 +1500,15 @@ const TREE = [
                         "ja": "改善した",
                         "ko": "개선됨",
                         "detailJa": "問題は解決しました。",
-                        "detailKo": "문제가 해결되었습니다."
+                        "detailKo": "문제가 해결되었습니다.",
+                        "de": "Verbessert",
+                        "fr": "Amélioration",
+                        "it": "Migliorato",
+                        "ru": "Улучшилось",
+                        "detailDe": "Problem gelöst.",
+                        "detailFr": "Problème résolu.",
+                        "detailIt": "Problema risolto.",
+                        "detailRu": "Проблема решена."
                       },
                       {
                         "id": "correction-not-improved",
@@ -953,23 +1521,47 @@ const TREE = [
                         "ja": "改善しない",
                         "ko": "개선되지 않음",
                         "detailJa": "FSE に連絡してリモートで調査してもらってください。",
-                        "detailKo": "FSE에 연락하여 원격 조사를 요청하세요."
+                        "detailKo": "FSE에 연락하여 원격 조사를 요청하세요.",
+                        "de": "Keine Besserung",
+                        "fr": "Aucune amélioration",
+                        "it": "Nessun miglioramento",
+                        "ru": "Без улучшений",
+                        "detailDe": "Den FSE für eine Ferndiagnose kontaktieren.",
+                        "detailFr": "Contacter le FSE pour un dépannage à distance.",
+                        "detailIt": "Contattare l'FSE per la risoluzione da remoto.",
+                        "detailRu": "Обратитесь в FSE для удалённой диагностики."
                       }
                     ],
                     "ja": "手動で機器をドッキングさせ、Correct Map Drift をタップしてください",
-                    "ko": "수동으로 기기를 도킹시킨 후 Correct Map Drift를 탭하세요"
+                    "ko": "수동으로 기기를 도킹시킨 후 Correct Map Drift를 탭하세요",
+                    "de": "Das Gerät manuell andocken und auf „Correct Map Drift\" tippen",
+                    "fr": "Accoster manuellement l'appareil et appuyer sur « Correct Map Drift »",
+                    "it": "Agganciare manualmente il dispositivo e toccare \"Correct Map Drift\"",
+                    "ru": "Вручную состыкуйте устройство и нажмите «Correct Map Drift»"
                   }
                 ],
                 "ja": "RTK は正確だが、マップ上の位置が実際と一致していない",
-                "ko": "RTK는 정확하지만 지도상 위치가 실제와 일치하지 않음"
+                "ko": "RTK는 정확하지만 지도상 위치가 실제와 일치하지 않음",
+                "de": "RTK ist präzise, aber die Kartenposition stimmt nicht mit der Realität überein",
+                "fr": "Le RTK est précis, mais la position sur la carte ne correspond pas à la réalité",
+                "it": "L'RTK è preciso, ma la posizione sulla mappa non corrisponde alla realtà",
+                "ru": "RTK точен, но положение на карте не совпадает с реальностью"
               }
             ],
             "ja": "機器は中央に合わせられるが、充電できない",
-            "ko": "기기가 중앙에 맞춰지지만 충전이 되지 않음"
+            "ko": "기기가 중앙에 맞춰지지만 충전이 되지 않음",
+            "de": "Das Gerät kann sich zentrieren, lädt aber nicht",
+            "fr": "L'appareil peut se centrer, mais ne charge pas",
+            "it": "Il dispositivo riesce a centrarsi, ma non si ricarica",
+            "ru": "Устройство может отцентрироваться, но не заряжается"
           }
         ],
         "ja": "ドッキングの失敗",
-        "ko": "도킹 실패"
+        "ko": "도킹 실패",
+        "de": "Andocken fehlgeschlagen",
+        "fr": "Échec de l'accostage",
+        "it": "Aggancio non riuscito",
+        "ru": "Сбой стыковки"
       },
       {
         "id": "battery-issues",
@@ -988,19 +1580,35 @@ const TREE = [
                 "leaf": true,
                 "escalate": true,
                 "ja": "再度作業プランを実行して様子を見てください。改善しない場合は FSE に連絡してください",
-                "ko": "다시 작업 계획을 실행해 상태를 지켜보세요. 개선되지 않으면 FSE에 문의하세요"
+                "ko": "다시 작업 계획을 실행해 상태를 지켜보세요. 개선되지 않으면 FSE에 문의하세요",
+                "de": "Erneut einen Plan ausführen und beobachten; bei keiner Besserung den FSE kontaktieren",
+                "fr": "Relancer un plan et observer ; si aucune amélioration, contacter le FSE",
+                "it": "Eseguire nuovamente un piano e osservare; se non migliora, contattare l'FSE",
+                "ru": "Снова запустите план и понаблюдайте; если улучшения нет, обратитесь в FSE"
               }
             ],
             "ja": "電源を切って 4 時間放置する",
-            "ko": "전원을 끄고 4시간 동안 그대로 둠"
+            "ko": "전원을 끄고 4시간 동안 그대로 둠",
+            "de": "Das Gerät ausschalten und 4 Stunden lang ruhen lassen",
+            "fr": "Éteindre l'appareil et le laisser au repos pendant 4 heures",
+            "it": "Spegnere il dispositivo e lasciarlo a riposo per 4 ore",
+            "ru": "Выключите устройство и оставьте его в покое на 4 часа"
           }
         ],
         "ja": "バッテリーが満充電にならない、充電が遅い、消耗が早い",
-        "ko": "배터리가 완전히 충전되지 않음, 충전 속도가 느림, 소모가 너무 빠름"
+        "ko": "배터리가 완전히 충전되지 않음, 충전 속도가 느림, 소모가 너무 빠름",
+        "de": "Der Akku lädt nicht vollständig auf, lädt zu langsam oder entlädt sich zu schnell",
+        "fr": "La batterie ne se charge pas complètement, se charge trop lentement ou se décharge trop vite",
+        "it": "La batteria non si carica completamente, si carica troppo lentamente o si scarica troppo velocemente",
+        "ru": "Аккумулятор не заряжается полностью, заряжается слишком медленно или разряжается слишком быстро"
       }
     ],
     "ja": "ワイヤレス充電の失敗",
-    "ko": "무선 충전 실패"
+    "ko": "무선 충전 실패",
+    "de": "Kabelloses Laden fehlgeschlagen",
+    "fr": "Échec de la charge sans fil",
+    "it": "Ricarica wireless non riuscita",
+    "ru": "Сбой беспроводной зарядки"
   },
   {
     "id": "datacenter",
@@ -1028,19 +1636,39 @@ const TREE = [
                 "ja": "改善しない",
                 "ko": "개선되지 않음",
                 "detailJa": "トラブルシューティングの経過を説明し、FSE に報告してください。",
-                "detailKo": "문제 해결 과정을 설명하고 FSE에 보고하세요."
+                "detailKo": "문제 해결 과정을 설명하고 FSE에 보고하세요.",
+                "de": "Keine Besserung",
+                "fr": "Aucune amélioration",
+                "it": "Nessun miglioramento",
+                "ru": "Без улучшений",
+                "detailDe": "Den Fehlerbehebungsprozess beschreiben und an den FSE melden.",
+                "detailFr": "Décrire le processus de dépannage et le signaler au FSE.",
+                "detailIt": "Descrivere il processo di risoluzione dei problemi e segnalarlo all'FSE.",
+                "detailRu": "Опишите ход диагностики и сообщите об этом в FSE."
               }
             ],
             "ja": "DC の RTK に問題がある可能性があります。Core の RTK を取り外して DC に取り付け、緑ランプに変わるか確認してください",
-            "ko": "DC의 RTK에 문제가 있을 수 있습니다. Core의 RTK를 분리해 DC에 장착한 후 초록색으로 바뀌는지 확인하세요"
+            "ko": "DC의 RTK에 문제가 있을 수 있습니다. Core의 RTK를 분리해 DC에 장착한 후 초록색으로 바뀌는지 확인하세요",
+            "de": "Es liegt ein Problem mit dem RTK des DC vor. Das RTK des Core ausbauen und am DC anbringen, um zu prüfen, ob es grün wird",
+            "fr": "Il y a un problème avec le RTK du DC. Retirer le RTK du Core et l'installer sur le DC pour voir s'il devient vert",
+            "it": "C'è un problema con l'RTK del DC. Rimuovere l'RTK del Core e installarlo sul DC per verificare se diventa verde",
+            "ru": "Проблема с RTK у DC. Снимите RTK с Core и установите на DC, чтобы проверить, станет ли индикатор зелёным"
           }
         ],
         "ja": "症状：DC が赤ランプを点灯する",
-        "ko": "증상: DC에 빨간색 표시등이 켜짐"
+        "ko": "증상: DC에 빨간색 표시등이 켜짐",
+        "de": "Symptom: Die DC-Leuchte leuchtet rot",
+        "fr": "Symptôme : le voyant du DC est rouge",
+        "it": "Sintomo: la spia del DC è rossa",
+        "ru": "Симптом: индикатор DC горит красным"
       }
     ],
     "ja": "Data Center の異常トラブルシューティング",
-    "ko": "Data Center 이상 문제 해결"
+    "ko": "Data Center 이상 문제 해결",
+    "de": "Fehlerbehebung bei Data Center-Anomalien",
+    "fr": "Dépannage des anomalies du Data Center",
+    "it": "Risoluzione delle anomalie del Data Center",
+    "ru": "Диагностика неисправностей Data Center"
   }
 ];
 
@@ -1067,6 +1695,26 @@ const ERROR_CODES = [
     "stepsKo": [
       "문제를 해결하기 전에 먼저 Version Information에서 펌웨어가 최신 버전인지 확인하세요.",
       "다음으로 교차 검증을 진행합니다 — 차두(Core)를 교체하세요. 오류가 사라지면 차두 문제이고, 사라지지 않으면 Core 문제입니다."
+    ],
+    "titleDe": "B009",
+    "titleFr": "B009",
+    "titleIt": "B009",
+    "titleRu": "B009",
+    "stepsDe": [
+      "Vor der Fehlerbehebung zunächst unter Version Information prüfen, ob die Firmware auf dem neuesten Stand ist.",
+      "Als Nächstes eine Kreuzprüfung durchführen — den Fahrzeugkopf (Core) austauschen. Verschwindet der Fehler, liegt es am Fahrzeugkopf; bleibt der Fehler bestehen, liegt es am Core."
+    ],
+    "stepsFr": [
+      "Avant le dépannage, vérifier d'abord dans Version Information si le firmware est à jour.",
+      "Ensuite, effectuer une vérification croisée — remplacer la tête motrice (Core). Si l'erreur disparaît, le problème vient de la tête motrice ; si elle persiste, le problème vient du Core."
+    ],
+    "stepsIt": [
+      "Prima della risoluzione dei problemi, verificare in Version Information se il firmware è aggiornato.",
+      "Successivamente, eseguire una verifica incrociata: sostituire la testa motrice (Core). Se l'errore scompare, il problema è nella testa motrice; se persiste, il problema è nel Core."
+    ],
+    "stepsRu": [
+      "Перед диагностикой сначала проверьте в Version Information, установлена ли последняя версия прошивки.",
+      "Далее проведите перекрёстную проверку — замените головной блок (Core). Если ошибка исчезнет, проблема в головном блоке; если ошибка сохранится, проблема в Core."
     ]
   },
   {
@@ -1095,6 +1743,30 @@ const ERROR_CODES = [
       "먼저 실제로 걸려 있는지 확인하세요.",
       "이물질을 제거한 후 베어링이 변형되었는지 확인하세요.",
       "변형이 없다면 깨끗이 청소한 후 Yarbo를 재부팅하세요. 그래도 오류가 사라지지 않으면 FSE에 문의하세요."
+    ],
+    "titleDe": "Left Cutting Motor Blocked (linker Schneidmotor blockiert)",
+    "titleFr": "Left Cutting Motor Blocked (moteur de coupe gauche bloqué)",
+    "titleIt": "Left Cutting Motor Blocked (motore di taglio sinistro bloccato)",
+    "titleRu": "Left Cutting Motor Blocked (заблокирован левый режущий мотор)",
+    "stepsDe": [
+      "Zunächst bestätigen, ob tatsächlich eine Blockierung vorliegt.",
+      "Fremdkörper entfernen und prüfen, ob das Lager verformt ist.",
+      "Liegt keine Verformung vor, gründlich reinigen und Yarbo neu starten; bleibt der Fehler bestehen, den FSE kontaktieren."
+    ],
+    "stepsFr": [
+      "Vérifier d'abord s'il s'agit réellement d'un blocage.",
+      "Retirer les débris puis vérifier si le roulement est déformé.",
+      "En l'absence de déformation, nettoyer soigneusement puis redémarrer Yarbo ; si l'erreur persiste, contacter le FSE."
+    ],
+    "stepsIt": [
+      "Verificare innanzitutto se si tratta effettivamente di un blocco.",
+      "Rimuovere i detriti e verificare se il cuscinetto è deformato.",
+      "Se non c'è deformazione, pulire accuratamente e riavviare Yarbo; se l'errore persiste, contattare l'FSE."
+    ],
+    "stepsRu": [
+      "Сначала убедитесь, что действительно произошла блокировка.",
+      "Уберите мусор и проверьте, не деформирован ли подшипник.",
+      "Если деформации нет, тщательно очистите и перезапустите Yarbo; если ошибка сохранится, обратитесь в FSE."
     ]
   },
   {
@@ -1119,6 +1791,26 @@ const ERROR_CODES = [
     "stepsKo": [
       "사용자에게 충돌 범퍼를 분리하도록 안내하세요. 분리 후 오류가 사라지면 충돌 범퍼 부품만 교체하면 됩니다.",
       "오류가 사라지지 않으면 잔디깎이 헤드 교체를 권장하며, FSE에 연락해 교체 절차를 시작하세요."
+    ],
+    "titleDe": "Collision Occurred (Kollisionserkennung ausgelöst)",
+    "titleFr": "Collision Occurred (détection de collision déclenchée)",
+    "titleIt": "Collision Occurred (rilevamento collisione attivato)",
+    "titleRu": "Collision Occurred (сработало обнаружение столкновения)",
+    "stepsDe": [
+      "Den Nutzer anleiten, den Stoßfänger (Bumper) abzunehmen. Verschwindet der Fehler danach, genügt es, das Bumper-Teil auszutauschen.",
+      "Bleibt der Fehler bestehen, wird empfohlen, den Mähkopf auszutauschen und den FSE zu kontaktieren, um den Austauschprozess einzuleiten."
+    ],
+    "stepsFr": [
+      "Guider l'utilisateur pour retirer le pare-chocs (bumper). Si l'erreur disparaît après le retrait, il suffit de remplacer la pièce du pare-chocs.",
+      "Si l'erreur persiste, il est recommandé de remplacer la tête de tonte et de contacter le FSE pour lancer la procédure de remplacement."
+    ],
+    "stepsIt": [
+      "Guidare l'utente nella rimozione del paraurti (bumper). Se l'errore scompare dopo la rimozione, è sufficiente sostituire il componente del paraurti.",
+      "Se l'errore persiste, si consiglia di sostituire la testa di taglio e contattare l'FSE per avviare la procedura di sostituzione."
+    ],
+    "stepsRu": [
+      "Проинструктируйте пользователя снять бампер. Если после снятия ошибка исчезнет, достаточно заменить деталь бампера.",
+      "Если ошибка сохранится, рекомендуется заменить косильную головку и обратиться в FSE для запуска процедуры замены."
     ]
   },
   {
@@ -1139,6 +1831,22 @@ const ERROR_CODES = [
     ],
     "stepsKo": [
       "모터 엔코더 배선이 헐거워졌습니다. 잔디깎이 헤드 교체를 권장합니다."
+    ],
+    "titleDe": "RC004",
+    "titleFr": "RC004",
+    "titleIt": "RC004",
+    "titleRu": "RC004",
+    "stepsDe": [
+      "Der Kabelbaum des Motorencoders ist locker; es wird empfohlen, den Mähkopf auszutauschen."
+    ],
+    "stepsFr": [
+      "Le faisceau de câbles de l'encodeur du moteur est desserré ; il est recommandé de remplacer la tête de tonte."
+    ],
+    "stepsIt": [
+      "Il cablaggio dell'encoder del motore è allentato; si consiglia di sostituire la testa di taglio."
+    ],
+    "stepsRu": [
+      "Ослаблена проводка энкодера двигателя; рекомендуется заменить косильную головку."
     ]
   },
   {
@@ -1175,6 +1883,38 @@ const ERROR_CODES = [
       "1) 산발적: 작업 계획 중 가끔 발생하고 재부팅하면 회복되는, 간헐적인 경우.",
       "2) 지속적: 계속 오류가 발생하여 잔디 깎기가 완전히 불가능한 경우.",
       "FSE에 보고할 때는 반드시 어느 경우에 해당하는지 명시하세요."
+    ],
+    "titleDe": "Please wait until the blades reach the required speed.",
+    "titleFr": "Please wait until the blades reach the required speed.",
+    "titleIt": "Please wait until the blades reach the required speed.",
+    "titleRu": "Please wait until the blades reach the required speed.",
+    "stepsDe": [
+      "Beim Auftreten des Fehlers Diagnose Tools → Main Part öffnen und prüfen, ob der Wert von Emergency Stop 2 ist (Screenshot speichern).",
+      "Dieser Fehler tritt in zwei Formen auf:",
+      "1) Gelegentlich: tritt während eines Arbeitsplans gelegentlich auf, erholt sich nach einem Neustart, unregelmäßig.",
+      "2) Anhaltend: der Fehler tritt durchgehend auf und macht das Mähen vollständig unmöglich.",
+      "Bei der Meldung an den FSE unbedingt angeben, um welche der beiden Situationen es sich handelt."
+    ],
+    "stepsFr": [
+      "Au moment de l'erreur, ouvrir Diagnose Tools → Main Part et vérifier si la valeur d'Emergency Stop est 2 (enregistrer une capture d'écran).",
+      "Cette erreur se présente sous deux formes :",
+      "1) Occasionnelle : apparaît occasionnellement pendant un plan de travail, se rétablit après un redémarrage, de façon intermittente.",
+      "2) Persistante : l'erreur se produit en continu, rendant la tonte totalement impossible.",
+      "Lors du signalement au FSE, veillez à préciser de quelle situation il s'agit."
+    ],
+    "stepsIt": [
+      "Al momento dell'errore, aprire Diagnose Tools → Main Part e verificare se il valore di Emergency Stop è 2 (salvare uno screenshot).",
+      "Questo errore si presenta in due modalità:",
+      "1) Occasionale: si verifica occasionalmente durante un piano di lavoro, si risolve dopo un riavvio, in modo intermittente.",
+      "2) Persistente: l'errore si verifica continuamente, rendendo il taglio dell'erba completamente impossibile.",
+      "Quando si segnala all'FSE, specificare sempre a quale delle due situazioni si riferisce."
+    ],
+    "stepsRu": [
+      "В момент ошибки откройте Diagnose Tools → Main Part и проверьте, равно ли значение Emergency Stop 2 (сохраните скриншот).",
+      "Эта ошибка проявляется в двух вариантах:",
+      "1) Спорадическая: изредка возникает во время выполнения плана работы, устраняется после перезапуска, проявляется непостоянно.",
+      "2) Постоянная: ошибка возникает непрерывно, что делает стрижку полностью невозможной.",
+      "При обращении в FSE обязательно укажите, какой именно из этих случаев имеет место."
     ]
   }
 ];
@@ -1195,6 +1935,22 @@ const CODES_PREFACE = {
   "ko": [
     "증상: 앱에 오류 메시지가 표시되었습니다. 오류 코드로 검색하세요.",
     "검색해도 나오지 않는 오류 코드는 현재 사전 진단이 불가능하다는 의미입니다. 스크린샷을 찍어 바로 FSE에 보고하세요."
+  ],
+  "de": [
+    "Symptom: Die App hat eine Fehlermeldung angezeigt — anhand des Fehlercodes suchen.",
+    "Ein nicht gefundener Fehlercode bedeutet, dass momentan keine vorgelagerte Diagnose möglich ist; bitte direkt einen Screenshot machen und an den FSE melden."
+  ],
+  "fr": [
+    "Symptôme : l'application a affiché un message d'erreur — effectuer une recherche à partir du code d'erreur.",
+    "Un code d'erreur introuvable signifie qu'un diagnostic préalable n'est pas possible pour l'instant ; veuillez faire une capture d'écran et la signaler directement au FSE."
+  ],
+  "it": [
+    "Sintomo: l'app ha mostrato un messaggio di errore: effettuare una ricerca in base al codice di errore.",
+    "Un codice di errore non trovato significa che al momento non è possibile una diagnosi preliminare; effettuare uno screenshot e segnalarlo direttamente all'FSE."
+  ],
+  "ru": [
+    "Симптом: в приложении появилось сообщение об ошибке — выполните поиск по коду ошибки.",
+    "Если код ошибки не найден, это означает, что предварительная диагностика пока невозможна; сделайте скриншот и сообщите об этом непосредственно в FSE."
   ]
 };
 
@@ -1205,6 +1961,10 @@ const VIDEOS = [
     en: "Core Unit (Common Parts)",
     ja: "コア本体（共通部品）",
     ko: "코어 본체(공통 부품)",
+    de: "Kerneinheit (allgemeine Teile)",
+    fr: "Unité principale (pièces communes)",
+    it: "Unità principale (parti comuni)",
+    ru: "Базовый блок (общие детали)",
     items: [
       { id: "v-actuator", titleEn: "How to Change Linear Actuator Motor", titleZh: "更换推杆电机",
         links: [{ type: "drive", url: null }] },
@@ -1262,6 +2022,10 @@ const VIDEOS = [
     en: "2024 Mower",
     ja: "2024 芝刈りヘッド",
     ko: "2024 잔디깎이 헤드",
+    de: "2024 Mähkopf",
+    fr: "2024 Tête de tonte",
+    it: "2024 Testa di taglio",
+    ru: "2024 Косильная головка",
     items: [
       { id: "v-mower-bumper", titleEn: "How to Replace mower Bumper", titleZh: "更换割草bumper",
         links: [{ type: "youtube", url: "https://youtu.be/Ak2II75Dc68" }, { type: "wiki", url: "https://wiki.yarbo.com/en/lawn-mower/installation/replace-bumper" }] },
@@ -1285,6 +2049,10 @@ const VIDEOS = [
     en: "2024 Blower",
     ja: "2024 ブロワーヘッド",
     ko: "2024 블로워 헤드",
+    de: "2024 Gebläsekopf",
+    fr: "2024 Tête de soufflage",
+    it: "2024 Testa soffiante",
+    ru: "2024 Воздуходувная головка",
     items: [
       { id: "v-blower-camera", titleEn: "Replacing Yarbo 2024 Blower's Front Camera", titleZh: "更换吹风前摄",
         links: [{ type: "youtube", url: "https://youtu.be/eUyIt1hbJDQ" }] }
@@ -1296,6 +2064,10 @@ const VIDEOS = [
     en: "2025 Trimmer",
     ja: "2025 トリマーヘッド",
     ko: "2025 트리머 헤드",
+    de: "2025 Trimmerkopf",
+    fr: "2025 Tête de débroussailleuse",
+    it: "2025 Testa decespugliatore",
+    ru: "2025 Триммерная головка",
     items: [
       { id: "v-trimmer-spool", titleEn: "Trimmer — Change Head and Line Spool", titleZh: "换线轴+线盘",
         links: [{ type: "youtube", url: "https://youtu.be/BXbmH6QJuMM" }] },
@@ -1311,6 +2083,10 @@ const VIDEOS = [
     en: "2024 Snowblower",
     ja: "2024 除雪ヘッド",
     ko: "2024 제설 헤드",
+    de: "2024 Schneefräsenkopf",
+    fr: "2024 Tête de souffleuse à neige",
+    it: "2024 Testa spazzaneve",
+    ru: "2024 Снегоуборочная головка",
     items: [
       { id: "v-snow-force-detach", titleEn: "Force detach snowblower from the core", titleZh: "强拆扫雪头",
         links: [{ type: "drive", url: null }] },
@@ -1351,10 +2127,28 @@ const INTRO_CONTENT = {
     lead: "Yarbo 故障排查工具，帮助 dealer 在联系 FSE 之前快速排查用户问题，并预先向用户收集更充分、更有效的信息。",
     problemTypes: {
       heading: "问题通常分为三类",
+      examplesLabel: "示例",
       items: [
         { label: "硬件问题", text: "需要提供具体照片，帮助 FSE 判断损坏原因，以及是否需要更换部件。" },
         { label: "软件问题", text: "需要提供具体发生时间，并判断是偶发还是稳定复现，帮助 FSE 定位问题。" },
         { label: "软硬件结合问题", text: "先排查硬件，排除硬件故障后，再按 FSE 提供的排查步骤抓取日志。" }
+      ],
+      examples: [
+        {
+          question: "什么是硬件问题？",
+          answer: "指物理损坏。请提供多角度的详细照片，供 FSE 判断。",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "什么是软件问题？",
+          answer: "仅在软件层面影响 Yarbo 运行的问题。",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "什么是软硬件结合问题？",
+          answer: "该问题可能是硬件和软件问题共同造成的。",
+          extra: "例如，Yarbo 在割草过程中出界时，需要立即检查是否存在硬件 RTK 问题。如果 RTK status 不为 4，可以先从物理层面进行修复。修复后如果出界问题仍然存在，就需要从软件层面进一步排查：收集具体发生时间和出界区域，然后上报给对应区域的 FSE 进行抓日志排查。"
+        }
       ]
     },
     prerequisite: {
@@ -1398,10 +2192,28 @@ const INTRO_CONTENT = {
     lead: "The Yarbo Troubleshooting Tool helps dealers quickly triage a user's issue and gather more complete, useful information from the user before contacting FSE.",
     problemTypes: {
       heading: "Issues generally fall into three categories",
+      examplesLabel: "Examples",
       items: [
         { label: "Hardware issues", text: "Provide specific photos to help FSE judge the cause of the damage and whether a part needs replacing." },
         { label: "Software issues", text: "Provide the exact time it happened, and note whether it's occasional or consistently reproducible, to help FSE diagnose it." },
         { label: "Combined hardware / software issues", text: "Rule out hardware first; once hardware is cleared, follow FSE's troubleshooting steps to pull logs." }
+      ],
+      examples: [
+        {
+          question: "What's a hardware issue?",
+          answer: "It's physical damage. Please provide detailed photos from multiple angles so FSE can make a judgment.",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "What's a software issue?",
+          answer: "An issue that only affects Yarbo's operation at the software level.",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "What's a combined hardware / software issue?",
+          answer: "The issue may arise from a combination of hardware and software problems.",
+          extra: "For example, when Yarbo goes out of bounds while mowing, immediately check whether there's a hardware RTK issue. If the RTK status isn't 4, it can be fixed at the physical level. If the boundary issue still occurs after that fix, investigate further at the software level: collect the specific timestamp and the area where it occurred, then escalate to the FSE for that region to pull logs for troubleshooting."
+        }
       ]
     },
     prerequisite: {
@@ -1445,10 +2257,28 @@ const INTRO_CONTENT = {
     lead: "Yarbo トラブルシューティングツールは、dealer が FSE に連絡する前にユーザーの問題を素早く切り分け、より充実した有効な情報を事前に収集できるようにするためのものです。",
     problemTypes: {
       heading: "問題は主に 3 種類に分類されます",
+      examplesLabel: "事例",
       items: [
         { label: "ハードウェアの問題", text: "具体的な写真を提供し、FSE が破損原因および部品交換の要否を判断できるようにします。" },
         { label: "ソフトウェアの問題", text: "発生した具体的な時刻を提供し、まれに起きるのか安定して再現するのかを判断して、FSE の診断を助けます。" },
         { label: "ハードウェアとソフトウェアが絡む問題", text: "まずハードウェアを確認し、ハードウェアの故障を除外したうえで、FSE の指示する手順に沿ってログを取得してください。" }
+      ],
+      examples: [
+        {
+          question: "ハードウェアの問題とは？",
+          answer: "物理的な破損のことです。FSE が判断できるよう、複数の角度から詳しい写真を提供してください。",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "ソフトウェアの問題とは？",
+          answer: "ソフトウェアレベルでのみ Yarbo の動作に影響する問題です。",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "ハードウェアとソフトウェアが絡む問題とは？",
+          answer: "ハードウェアとソフトウェア双方の問題が組み合わさって発生している可能性がある問題です。",
+          extra: "例えば、芝刈り中に Yarbo が境界を逸脱した場合、まずハードウェアの RTK に問題がないかすぐに確認する必要があります。RTK の status が 4 でなければ、物理的な対応で修正できます。修正後も境界逸脱が続く場合は、ソフトウェア面でさらに調査する必要があります。具体的な発生時刻と発生エリアを記録し、該当地域の FSE にエスカレーションしてログを取得し、トラブルシューティングを行ってください。"
+        }
       ]
     },
     prerequisite: {
@@ -1492,10 +2322,28 @@ const INTRO_CONTENT = {
     lead: "Yarbo 문제 해결 도구는 딜러가 FSE에 연락하기 전에 사용자 문제를 빠르게 파악하고, 더 충분하고 유용한 정보를 미리 수집할 수 있도록 도와줍니다.",
     problemTypes: {
       heading: "문제는 일반적으로 세 가지로 나뉩니다",
+      examplesLabel: "예시",
       items: [
         { label: "하드웨어 문제", text: "구체적인 사진을 제공해 FSE가 손상 원인과 부품 교체 필요 여부를 판단하도록 도와주세요." },
         { label: "소프트웨어 문제", text: "발생한 정확한 시간을 제공하고, 가끔 발생하는지 안정적으로 재현되는지 판단하여 FSE의 진단을 도와주세요." },
         { label: "하드웨어·소프트웨어 복합 문제", text: "먼저 하드웨어를 점검하고, 하드웨어 문제를 배제한 후 FSE가 제공하는 절차에 따라 로그를 수집하세요." }
+      ],
+      examples: [
+        {
+          question: "하드웨어 문제란?",
+          answer: "물리적 손상을 의미합니다. FSE가 판단할 수 있도록 여러 각도에서 찍은 상세한 사진을 제공해 주세요.",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "소프트웨어 문제란?",
+          answer: "소프트웨어 수준에서만 Yarbo의 작동에 영향을 미치는 문제입니다.",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "하드웨어·소프트웨어 복합 문제란?",
+          answer: "하드웨어와 소프트웨어 문제가 결합되어 발생했을 수 있는 문제입니다.",
+          extra: "예를 들어, 잔디 깎기 중 Yarbo가 경계를 이탈하면 먼저 하드웨어 RTK에 문제가 있는지 바로 확인해야 합니다. RTK status가 4가 아니라면 물리적인 조치로 수정할 수 있습니다. 수정 후에도 경계 이탈이 계속되면 소프트웨어 측면에서 추가로 조사해야 합니다. 정확한 발생 시간과 발생 구역을 수집한 후 해당 지역 FSE에 에스컬레이션하여 로그를 수집해 문제를 해결하세요."
+        }
       ]
     },
     prerequisite: {
@@ -1530,6 +2378,266 @@ const INTRO_CONTENT = {
             "1순위(HaLow — 최우선): Yarbo 전용 채널입니다. 베이스 스테이션의 공유기 회선을 \u201c빌려\u201d 쓰면서 동시에 위치 데이터도 받습니다. Wi-Fi가 끊겨도 영향받지 않는 가장 안정적인 경로입니다.",
             "2순위(Wi-Fi): HaLow 신호가 약하면 집 Wi-Fi에 연결합니다. 속도가 빨라 대용량 데이터 전송에 적합합니다.",
             "3순위(4G — 최후 수단): 위 두 가지가 모두 끊기면 내장된 4G 데이터를 활성화해 기기가 오프라인 상태가 되지 않도록 합니다."
+          ]
+        }
+      ]
+    }
+  },
+  de: {
+    lead: "Das Yarbo-Fehlerbehebungstool hilft Händlern, ein Kundenproblem schnell einzugrenzen und vor der Kontaktaufnahme mit dem FSE vollständigere, nützlichere Informationen vom Nutzer zu sammeln.",
+    problemTypes: {
+      heading: "Probleme lassen sich meist in drei Kategorien einteilen",
+      examplesLabel: "Beispiele",
+      items: [
+        { label: "Hardware-Probleme", text: "Konkrete Fotos bereitstellen, damit der FSE die Schadensursache beurteilen und entscheiden kann, ob ein Teil ausgetauscht werden muss." },
+        { label: "Software-Probleme", text: "Den genauen Zeitpunkt angeben und vermerken, ob es gelegentlich oder durchgehend reproduzierbar auftritt, um dem FSE die Diagnose zu erleichtern." },
+        { label: "Kombinierte Hardware-/Software-Probleme", text: "Zuerst Hardware ausschließen; sobald die Hardware als Ursache ausgeschlossen ist, den Fehlerbehebungsschritten des FSE folgen, um Protokolle zu erfassen." }
+      ],
+      examples: [
+        {
+          question: "Was ist ein Hardware-Problem?",
+          answer: "Ein physischer Schaden. Bitte detaillierte Fotos aus mehreren Blickwinkeln bereitstellen, damit der FSE eine Beurteilung vornehmen kann.",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "Was ist ein Software-Problem?",
+          answer: "Ein Problem, das den Betrieb von Yarbo nur auf Softwareebene beeinträchtigt.",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "Was ist ein kombiniertes Hardware-/Software-Problem?",
+          answer: "Das Problem kann durch eine Kombination von Hardware- und Softwareproblemen entstehen.",
+          extra: "Wenn Yarbo beispielsweise beim Mähen die Grenze überschreitet, sofort prüfen, ob ein Hardware-RTK-Problem vorliegt. Ist der RTK-Status nicht 4, kann dies auf physischer Ebene behoben werden. Tritt das Grenzproblem nach der Behebung weiterhin auf, muss auf Softwareebene weiter untersucht werden: den genauen Zeitpunkt und den betroffenen Bereich erfassen, dann an den zuständigen FSE eskalieren, um Protokolle zur Fehlerbehebung zu erfassen."
+        }
+      ]
+    },
+    prerequisite: {
+      heading: "Voraussetzung für die Ferndiagnose durch den FSE",
+      text: "Das Gerät muss eingeschaltet sein und eine stabile Netzwerkverbindung haben."
+    },
+    links: {
+      heading: "Wichtige Ressourcen-Links",
+      items: [
+        { label: "wiki.yarbo.com", url: "https://wiki.yarbo.com", desc: "Ein einzelnes Stichwort suchen, um verwandte Referenzartikel zu finden" },
+        { label: "netrtk-Abdeckungsbereich", url: "https://www.yarbo.com/pages/yarbo-netrtk?p=t", desc: "Zeigt den Abdeckungsbereich bei Nutzung von netrtk" },
+        { label: "fleet.yarbo.ai", url: "https://fleet.yarbo.ai/login", desc: "Das Flottenmanagementsystem von Yarbo — als Händler anmelden" },
+        { label: "Dealer-Portal-Reparaturvideoanleitungen", url: "https://dealer-portal.yarbo.com/pages/repair-service-test", desc: "Detailliertere Video-Reparaturanleitungen für Händler/Reparaturbetriebe" }
+      ]
+    },
+    howItWorks: {
+      heading: "So funktioniert Yarbo",
+      blocks: [
+        {
+          title: "1. DataCenter (DC / Basisstation): der \u201cSendeturm\u201d der Positionierung",
+          text: "Die Kernaufgabe der Basisstation ist es, RTK-Positionsdaten an den Roboter zu senden. Es gibt zwei Betriebsmodi:",
+          bullets: [
+            "Verbunden (Online-Modus): Die Basisstation verbindet sich per Kabel mit dem Router und sendet Positionsdaten an die Cloud (Ntrip-Server).",
+            "Offline-Modus: Die Basisstation nutzt HaLow (eine Funktechnologie mit großer Reichweite), um Positionsdaten direkt an den Roboter zu \u201csenden\u201d. Sie hat eine feste interne Adresse (37.38.38.9).",
+            "Bluetooth: funktioniert wie eine Fernbedienung — zum Aktualisieren der Firmware der Basisstation, Ändern von Einstellungen oder Anpassen der Beleuchtung."
+          ]
+        },
+        {
+          title: "2. Yarbo Core (der Roboter): der \u201cPrioritätsexperte\u201d der Kommunikation",
+          text: "Der Roboter ist intelligent — er wechselt automatisch je nach Signalstärke zwischen drei Kanälen (der stabilste gewinnt):",
+          ordered: [
+            "Erste Priorität (HaLow — höchste Priorität): Yarbos eigener Kanal. Er \u201cleiht\u201d sich die Router-Verbindung der Basisstation und erhält gleichzeitig Positionsdaten von ihr. Dies ist die stabilste Option, die selbst bei WLAN-Ausfall nicht beeinträchtigt wird.",
+            "Zweite Priorität (Wi-Fi): Ist HaLow nicht stark genug, wechselt das Gerät zum heimischen WLAN, das schnell ist und sich für die Übertragung größerer Datenmengen eignet.",
+            "Dritte Priorität (4G — letzter Ausweg): Sind beide oben genannten Verbindungen ausgefallen, aktiviert das Gerät seine integrierten 4G-Daten, damit es nicht offline geht."
+          ]
+        }
+      ]
+    }
+  },
+  fr: {
+    lead: "L'outil de dépannage Yarbo aide les revendeurs à trier rapidement le problème d'un utilisateur et à recueillir des informations plus complètes et utiles auprès de l'utilisateur avant de contacter le FSE.",
+    problemTypes: {
+      heading: "Les problèmes se répartissent généralement en trois catégories",
+      examplesLabel: "Exemples",
+      items: [
+        { label: "Problèmes matériels", text: "Fournir des photos précises pour aider le FSE à juger la cause du dommage et si une pièce doit être remplacée." },
+        { label: "Problèmes logiciels", text: "Fournir l'heure exacte de l'incident et indiquer s'il est occasionnel ou reproductible de façon constante, pour aider le FSE à diagnostiquer." },
+        { label: "Problèmes combinés matériel / logiciel", text: "Écarter d'abord le matériel ; une fois le matériel écarté, suivre les étapes de dépannage du FSE pour récupérer les journaux." }
+      ],
+      examples: [
+        {
+          question: "Qu'est-ce qu'un problème matériel ?",
+          answer: "Il s'agit d'un dommage physique. Veuillez fournir des photos détaillées sous plusieurs angles afin que le FSE puisse évaluer la situation.",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "Qu'est-ce qu'un problème logiciel ?",
+          answer: "Un problème qui n'affecte le fonctionnement de Yarbo qu'au niveau logiciel.",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "Qu'est-ce qu'un problème combiné matériel / logiciel ?",
+          answer: "Le problème peut résulter d'une combinaison de problèmes matériels et logiciels.",
+          extra: "Par exemple, lorsque Yarbo sort des limites pendant la tonte, il faut immédiatement vérifier s'il y a un problème matériel RTK. Si le statut RTK n'est pas 4, cela peut être corrigé au niveau physique. Si le problème de limite persiste après cette correction, il faut approfondir l'investigation au niveau logiciel : recueillir l'horodatage précis et la zone concernée, puis escalader au FSE de la région concernée pour récupérer les journaux à des fins de dépannage."
+        }
+      ]
+    },
+    prerequisite: {
+      heading: "Condition préalable au dépannage à distance par le FSE",
+      text: "L'appareil doit être allumé et disposer d'une connexion réseau stable."
+    },
+    links: {
+      heading: "Liens de ressources importants",
+      items: [
+        { label: "wiki.yarbo.com", url: "https://wiki.yarbo.com", desc: "Rechercher un seul mot-clé pour trouver des articles de référence associés" },
+        { label: "Zone de couverture netrtk", url: "https://www.yarbo.com/pages/yarbo-netrtk?p=t", desc: "Affiche la zone de couverture lors de l'utilisation de netrtk" },
+        { label: "fleet.yarbo.ai", url: "https://fleet.yarbo.ai/login", desc: "Le système de gestion de flotte de Yarbo — se connecter en tant que revendeur" },
+        { label: "Guides vidéo de réparation du portail revendeur", url: "https://dealer-portal.yarbo.com/pages/repair-service-test", desc: "Guides vidéo de réparation plus détaillés pour les revendeurs/ateliers de réparation" }
+      ]
+    },
+    howItWorks: {
+      heading: "Fonctionnement de Yarbo",
+      blocks: [
+        {
+          title: "1. DataCenter (DC / station de base) : la \u201ctour de diffusion\u201d du positionnement",
+          text: "Le rôle principal de la station de base est d'envoyer les données de positionnement RTK au robot. Elle dispose de deux modes de fonctionnement :",
+          bullets: [
+            "Connecté (mode en ligne) : la station de base se connecte au routeur par câble et envoie les données de positionnement au cloud (serveur Ntrip).",
+            "Mode hors ligne : la station de base utilise HaLow (une technologie sans fil longue portée) pour \u201clarguer\u201d directement les données de positionnement au robot. Elle possède une adresse interne fixe (37.38.38.9).",
+            "Bluetooth : fonctionne comme une télécommande — utilisé pour mettre à jour le micrologiciel de la station de base, modifier les paramètres ou ajuster son voyant."
+          ]
+        },
+        {
+          title: "2. Yarbo Core (le robot) : l'\u201cexpert en priorités\u201d de la communication",
+          text: "Le robot est intelligent — il bascule automatiquement entre trois canaux en fonction de la force du signal (le plus stable l'emporte) :",
+          ordered: [
+            "Première priorité (HaLow — priorité la plus élevée) : le canal dédié de Yarbo. Il \u201cemprunte\u201d la connexion routeur de la station de base tout en récupérant également des données de positionnement. C'est l'option la plus stable, non affectée même en cas de coupure du Wi-Fi.",
+            "Deuxième priorité (Wi-Fi) : si HaLow n'est pas assez puissant, il bascule sur le Wi-Fi domestique, rapide et adapté au transfert de grandes quantités de données.",
+            "Troisième priorité (4G — dernier recours) : si les deux options ci-dessus sont indisponibles, il active ses données 4G intégrées pour éviter que l'appareil ne se déconnecte."
+          ]
+        }
+      ]
+    }
+  },
+  it: {
+    lead: "Lo strumento di risoluzione dei problemi Yarbo aiuta i rivenditori a valutare rapidamente il problema di un utente e a raccogliere informazioni più complete e utili dall'utente prima di contattare l'FSE.",
+    problemTypes: {
+      heading: "I problemi generalmente rientrano in tre categorie",
+      examplesLabel: "Esempi",
+      items: [
+        { label: "Problemi hardware", text: "Fornire foto specifiche per aiutare l'FSE a valutare la causa del danno e se è necessario sostituire un componente." },
+        { label: "Problemi software", text: "Fornire l'ora esatta in cui si è verificato e indicare se è occasionale o costantemente riproducibile, per aiutare l'FSE nella diagnosi." },
+        { label: "Problemi combinati hardware / software", text: "Escludere prima l'hardware; una volta escluso l'hardware, seguire i passaggi di risoluzione dell'FSE per raccogliere i log." }
+      ],
+      examples: [
+        {
+          question: "Cos'è un problema hardware?",
+          answer: "È un danno fisico. Si prega di fornire foto dettagliate da più angolazioni in modo che l'FSE possa effettuare una valutazione.",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "Cos'è un problema software?",
+          answer: "Un problema che influisce sul funzionamento di Yarbo solo a livello software.",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "Cos'è un problema combinato hardware / software?",
+          answer: "Il problema potrebbe derivare da una combinazione di problemi hardware e software.",
+          extra: "Ad esempio, quando Yarbo esce dal confine durante il taglio dell'erba, è necessario verificare immediatamente se c'è un problema hardware RTK. Se lo stato RTK non è 4, può essere risolto a livello fisico. Se il problema di uscita dal confine persiste dopo la correzione, è necessario indagare ulteriormente a livello software: raccogliere l'orario esatto e l'area in cui si è verificato, quindi inoltrare all'FSE della regione competente per raccogliere i log ai fini della risoluzione dei problemi."
+        }
+      ]
+    },
+    prerequisite: {
+      heading: "Prerequisito per la risoluzione remota dei problemi da parte dell'FSE",
+      text: "Il dispositivo deve essere acceso e disporre di una connessione di rete stabile."
+    },
+    links: {
+      heading: "Link alle risorse importanti",
+      items: [
+        { label: "wiki.yarbo.com", url: "https://wiki.yarbo.com", desc: "Cerca una singola parola chiave per trovare articoli di riferimento correlati" },
+        { label: "Area di copertura netrtk", url: "https://www.yarbo.com/pages/yarbo-netrtk?p=t", desc: "Mostra l'area di copertura quando si utilizza netrtk" },
+        { label: "fleet.yarbo.ai", url: "https://fleet.yarbo.ai/login", desc: "Il sistema di gestione della flotta di Yarbo: accedi come rivenditore" },
+        { label: "Guide video di riparazione del Dealer Portal", url: "https://dealer-portal.yarbo.com/pages/repair-service-test", desc: "Guide video di riparazione più dettagliate per rivenditori/centri di riparazione" }
+      ]
+    },
+    howItWorks: {
+      heading: "Come funziona Yarbo",
+      blocks: [
+        {
+          title: "1. DataCenter (DC / stazione base): la \u201ctorre di trasmissione\u201d del posizionamento",
+          text: "Il compito principale della stazione base è inviare i dati di posizionamento RTK al robot. Ha due modalità di funzionamento:",
+          bullets: [
+            "Connessa (modalità online): la stazione base si collega al router via cavo e invia i dati di posizionamento al cloud (server Ntrip).",
+            "Modalità offline: la stazione base utilizza HaLow (una tecnologia wireless a lungo raggio) per \u201cinviare\u201d i dati di posizionamento direttamente al robot. Ha un indirizzo interno fisso (37.38.38.9).",
+            "Bluetooth: funziona come un telecomando, usato per aggiornare il firmware della stazione base, modificare le impostazioni o regolare la sua luce."
+          ]
+        },
+        {
+          title: "2. Yarbo Core (il robot): l'\u201cesperto di priorità\u201d della comunicazione",
+          text: "Il robot è intelligente: passa automaticamente tra tre canali in base alla potenza del segnale (vince il più stabile):",
+          ordered: [
+            "Prima priorità (HaLow — priorità massima): il canale dedicato di Yarbo. \u201cPrende in prestito\u201d la connessione del router della stazione base ottenendo anche i dati di posizionamento. È l'opzione più stabile, non influenzata nemmeno da un'interruzione del Wi-Fi.",
+            "Seconda priorità (Wi-Fi): se HaLow non è abbastanza forte, passa al Wi-Fi domestico, veloce e adatto al trasferimento di grandi quantità di dati.",
+            "Terza priorità (4G — ultima risorsa): se entrambe le opzioni sopra non sono disponibili, attiva i dati 4G integrati per evitare che il dispositivo vada offline."
+          ]
+        }
+      ]
+    }
+  },
+  ru: {
+    lead: "Инструмент устранения неисправностей Yarbo помогает дилерам быстро оценить проблему пользователя и собрать более полную и полезную информацию от пользователя перед обращением в FSE.",
+    problemTypes: {
+      heading: "Проблемы обычно делятся на три категории",
+      examplesLabel: "Примеры",
+      items: [
+        { label: "Аппаратные проблемы", text: "Предоставьте конкретные фотографии, чтобы помочь FSE оценить причину повреждения и необходимость замены детали." },
+        { label: "Программные проблемы", text: "Укажите точное время события и отметьте, происходит ли это изредка или стабильно воспроизводится, чтобы помочь FSE в диагностике." },
+        { label: "Комбинированные аппаратно-программные проблемы", text: "Сначала исключите аппаратную часть; после этого следуйте шагам диагностики FSE для сбора логов." }
+      ],
+      examples: [
+        {
+          question: "Что такое аппаратная проблема?",
+          answer: "Это физическое повреждение. Пожалуйста, предоставьте подробные фотографии с нескольких ракурсов, чтобы FSE мог сделать заключение.",
+          images: ["assets/intro-media/example-hardware-1.png", "assets/intro-media/example-hardware-2.png", "assets/intro-media/example-hardware-3.png"]
+        },
+        {
+          question: "Что такое программная проблема?",
+          answer: "Проблема, которая влияет на работу Yarbo только на программном уровне.",
+          images: ["assets/intro-media/example-software-1.png"]
+        },
+        {
+          question: "Что такое комбинированная аппаратно-программная проблема?",
+          answer: "Проблема может возникать из-за сочетания аппаратных и программных неполадок.",
+          extra: "Например, если Yarbo выходит за границу во время стрижки, нужно немедленно проверить, нет ли аппаратной проблемы с RTK. Если статус RTK не равен 4, это можно исправить на физическом уровне. Если после исправления проблема с выходом за границу сохраняется, нужно провести дополнительное расследование на программном уровне: зафиксировать точное время и область, где это произошло, а затем эскалировать в FSE соответствующего региона для сбора логов и устранения неисправности."
+        }
+      ]
+    },
+    prerequisite: {
+      heading: "Необходимое условие для удалённой диагностики FSE",
+      text: "Устройство должно быть включено и иметь стабильное сетевое подключение."
+    },
+    links: {
+      heading: "Важные справочные ссылки",
+      items: [
+        { label: "wiki.yarbo.com", url: "https://wiki.yarbo.com", desc: "Введите одно ключевое слово, чтобы найти связанные справочные статьи" },
+        { label: "Зона покрытия netrtk", url: "https://www.yarbo.com/pages/yarbo-netrtk?p=t", desc: "Показывает зону покрытия при использовании netrtk" },
+        { label: "fleet.yarbo.ai", url: "https://fleet.yarbo.ai/login", desc: "Система управления парком Yarbo — войдите как дилер" },
+        { label: "Видеоинструкции по ремонту от Dealer Portal", url: "https://dealer-portal.yarbo.com/pages/repair-service-test", desc: "Более подробные видеоинструкции по ремонту для дилеров и ремонтных мастерских" }
+      ]
+    },
+    howItWorks: {
+      heading: "Как работает Yarbo",
+      blocks: [
+        {
+          title: "1. DataCenter (DC / базовая станция): «передающая вышка» позиционирования",
+          text: "Основная задача базовой станции — передавать данные позиционирования RTK роботу. У неё есть два режима работы:",
+          bullets: [
+            "При подключении к сети (онлайн-режим): базовая станция подключается к роутеру по кабелю и отправляет данные позиционирования в облако (сервер Ntrip).",
+            "Без подключения к сети (офлайн-режим): базовая станция использует HaLow (беспроводную технологию большого радиуса действия), чтобы передавать данные позиционирования напрямую роботу. У неё есть фиксированный внутренний адрес (37.38.38.9).",
+            "Bluetooth: работает как пульт дистанционного управления — используется для обновления прошивки базовой станции, изменения настроек или регулировки её подсветки."
+          ]
+        },
+        {
+          title: "2. Yarbo Core (робот): «эксперт по приоритетам» связи",
+          text: "Робот очень умный — он автоматически переключается между тремя каналами связи в зависимости от силы сигнала (побеждает самый стабильный):",
+          ordered: [
+            "Первый приоритет (HaLow — наивысший приоритет): выделенный канал Yarbo. Он «одалживает» подключение роутера базовой станции, одновременно получая от неё данные позиционирования. Это самый стабильный вариант, на который не влияет даже отключение Wi-Fi.",
+            "Второй приоритет (Wi-Fi): если сигнал HaLow слабый, устройство переключается на домашний Wi-Fi, который быстрый и подходит для передачи больших объёмов данных.",
+            "Третий приоритет (4G — последний resort): если оба вышеуказанных канала недоступны, устройство активирует встроенный 4G, чтобы не остаться офлайн."
           ]
         }
       ]
@@ -1578,6 +2686,42 @@ const UPDATES = [
       "셀룰러 네트워크 페이지에 4G 서비스 상태 및 데이터 사용량 정보 추가",
       "일부 DC 펌웨어 버전에서 RTK 상세 정보 표시 호환성 문제 수정",
       "사용할 수 없는 DC Wi-Fi 설정 옵션 제거"
+    ],
+    titleDe: "R12 hotfix3",
+    titleFr: "R12 hotfix3",
+    titleIt: "R12 hotfix3",
+    titleRu: "R12 hotfix3",
+    tagDe: "Vollständiges Rollout",
+    tagFr: "Déploiement complet",
+    tagIt: "Rilascio completo",
+    tagRu: "Полное развёртывание",
+    changesDe: [
+      "Ein DC-Anzeigeproblem bei Verwendung von NetRTK behoben",
+      "Benachrichtigungslogik in Wiederherstellungsszenarien verbessert",
+      "Status des 4G-Dienstes und Datennutzungsinformationen zur Mobilfunkseite hinzugefügt",
+      "Ein Kompatibilitätsproblem bei der RTK-Detailanzeige auf einigen DC-Firmware-Versionen behoben",
+      "Die nicht nutzbare DC-WLAN-Konfigurationsoption entfernt"
+    ],
+    changesFr: [
+      "Correction d'un problème d'affichage du DC lors de l'utilisation de NetRTK",
+      "Amélioration de la logique de notification dans les scénarios de récupération",
+      "Ajout du statut du service 4G et des informations d'utilisation des données à la page Cellulaire",
+      "Correction d'un problème de compatibilité de l'affichage des détails RTK sur certaines versions du firmware DC",
+      "Suppression de l'option de configuration Wi-Fi DC inutilisable"
+    ],
+    changesIt: [
+      "Risolto un problema di visualizzazione del DC durante l'uso di NetRTK",
+      "Migliorata la logica di notifica negli scenari di ripristino",
+      "Aggiunte le informazioni sullo stato del servizio 4G e sull'utilizzo dei dati alla pagina Cellulare",
+      "Risolto un problema di compatibilità nella visualizzazione dei dettagli RTK su alcune versioni del firmware DC",
+      "Rimossa l'opzione di configurazione Wi-Fi DC non utilizzabile"
+    ],
+    changesRu: [
+      "Исправлена проблема отображения DC при использовании NetRTK",
+      "Улучшена логика уведомлений в сценариях восстановления",
+      "На страницу сотовой связи добавлена информация о статусе 4G и использовании данных",
+      "Исправлена проблема совместимости отображения сведений RTK на некоторых версиях прошивки DC",
+      "Удалена неработающая опция настройки Wi-Fi для DC"
     ]
   }
 ];
@@ -1603,7 +2747,23 @@ const CASES = [
     solutionZh: "更换割草头的 bumper。",
     solutionEn: "Replace the mower head's bumper.",
     solutionJa: "芝刈りヘッドのバンパーを交換してください。",
-    solutionKo: "잔디깎이 헤드의 범퍼를 교체하세요."
+    solutionKo: "잔디깎이 헤드의 범퍼를 교체하세요.",
+    titleDe: "Bumper-Problem",
+    titleFr: "Problème de pare-chocs",
+    titleIt: "Problema al paraurti",
+    titleRu: "Проблема с бампером",
+    problemDe: "Kundenmeldung: Yarbo verlangsamt sich beim Annähern an den Baum, beschleunigt dann und stößt gegen ihn, sobald es nahe genug ist. Es fährt zurück und rammt den Baum erneut schnell, fährt ein zweites Mal zurück und rammt den Baum ein drittes Mal, wobei es weiterhin gegen den Baum drückt, bis es einfach stehen bleibt. Der letzte Vorfall war gegen 19:25 Uhr CDT.",
+    problemFr: "Signalement du client : Yarbo ralentit en s'approchant de l'arbre, puis accélère et le percute une fois proche. Il recule et fonce à nouveau rapidement dans l'arbre, recule une deuxième fois, puis fonce dans l'arbre une troisième fois, et continue à pousser contre l'arbre jusqu'à s'arrêter. Le dernier incident s'est produit vers 19h25 (CDT).",
+    problemIt: "Segnalazione del cliente: Yarbo rallenta avvicinandosi all'albero, poi accelera e lo colpisce una volta vicino. Retrocede e si dirige di nuovo velocemente contro l'albero, retrocede una seconda volta, poi colpisce l'albero una terza volta, continuando a spingere contro di esso finché non si ferma. L'ultimo episodio si è verificato verso le 19:25 (CDT).",
+    problemRu: "Сообщение клиента: Yarbo замедляется при приближении к дереву, затем ускоряется и врезается в него, оказавшись рядом. Отъезжает назад и снова быстро врезается в дерево, отъезжает второй раз, затем врезается в дерево в третий раз, продолжая толкать дерево, пока просто не останавливается. Последний случай произошёл около 19:25 по CDT.",
+    analysisDe: "1) Yarbo stoppte nach dem Aufprall nicht sofort, und die App zeigte keinen kollisionsbezogenen Fehler an — verursacht durch einen beschädigten Sensor im Bumper des Mähkopfs.\n\n2) Die plötzliche Beschleunigung trat während des Arbeitsplans nur an dieser einen Stelle auf, was auf Radschlupf hindeutet.\n\nZusammenfassung: Radschlupf löste die plötzliche Beschleunigung aus, und ein ausgefallener Bumper-Sensor bedeutete, dass Yarbo die Kollision nicht erkennen und stoppen konnte.",
+    analysisFr: "1) Yarbo ne s'est pas arrêté immédiatement après avoir percuté l'arbre, et l'application n'a affiché aucune erreur liée à une collision — causé par un capteur endommagé à l'intérieur du pare-chocs de la tête de tonte.\n\n2) L'accélération soudaine ne s'est produite qu'à cet endroit précis pendant le plan de travail, ce qui indique un patinage des roues.\n\nRésumé : le patinage des roues a déclenché l'accélération soudaine, et un capteur de pare-chocs défaillant a empêché Yarbo de détecter la collision et de s'arrêter.",
+    analysisIt: "1) Yarbo non si è fermato immediatamente dopo aver colpito l'albero, e l'app non ha mostrato alcun errore relativo alla collisione: causato da un sensore danneggiato all'interno del paraurti della testa di taglio.\n\n2) L'accelerazione improvvisa si è verificata solo in questo punto durante il piano di lavoro, il che indica uno slittamento delle ruote.\n\nRiepilogo: lo slittamento delle ruote ha innescato l'accelerazione improvvisa, e un sensore del paraurti guasto ha fatto sì che Yarbo non potesse rilevare la collisione e fermarsi.",
+    analysisRu: "1) Yarbo не остановился сразу после удара о дерево, и приложение не показало ошибку, связанную со столкновением — это вызвано повреждённым датчиком внутри бампера косильной головки.\n\n2) Внезапное ускорение произошло только в этом одном месте во время выполнения плана работы, что указывает на пробуксовку колёс.\n\nИтог: пробуксовка колёс вызвала внезапное ускорение, а неисправный датчик бампера привёл к тому, что Yarbo не смог обнаружить столкновение и остановиться.",
+    solutionDe: "Den Bumper des Mähkopfs austauschen.",
+    solutionFr: "Remplacer le pare-chocs de la tête de tonte.",
+    solutionIt: "Sostituire il paraurti della testa di taglio.",
+    solutionRu: "Замените бампер косильной головки."
   },
   {
     id: "case-pole-collision",
@@ -1624,7 +2784,23 @@ const CASES = [
     solutionEn: "Draw the pole as a No-Go Zone, or enable visual obstacle avoidance on the machine.",
     solutionJa: "この柱を No-Go Zone として描画するか、機器の視覚障害物回避を有効にしてください。",
     solutionKo: "해당 기둥을 No-Go Zone으로 지정하거나, 기기의 시각 장애물 회피 기능을 켜세요.",
-    video: "assets/case-media/case2-pole-collision.mp4"
+    video: "assets/case-media/case2-pole-collision.mp4",
+    titleDe: "Kollision mit einem Hindernis bei der Rückkehr zur Ladestation",
+    titleFr: "Collision avec un obstacle en retournant à la station de charge",
+    titleIt: "Collisione con un ostacolo durante il rientro alla stazione di ricarica",
+    titleRu: "Столкновение с препятствием при возвращении на зарядную станцию",
+    problemDe: "Yarbo zeigt beim Rückweg zur Ladestation ein anormales Verhalten — es dreht sich wiederholt und kollidiert mit einem Pfosten. Der Hindernisvermeidungsmodus dieses Bereichs ist auf Gentle Contact eingestellt.",
+    problemFr: "Yarbo présente un comportement anormal en retournant à la station de charge — il tourne à plusieurs reprises et entre en collision avec un poteau. Le mode d'évitement d'obstacles de cette zone est réglé sur Gentle Contact.",
+    problemIt: "Yarbo mostra un comportamento anomalo durante il rientro alla stazione di ricarica: gira ripetutamente e collide con un palo. La modalità di evitamento degli ostacoli di quest'area è impostata su Gentle Contact.",
+    problemRu: "Yarbo демонстрирует аномальное поведение при возвращении на зарядную станцию — он многократно поворачивает и сталкивается со столбом. Режим объезда препятствий в этой зоне установлен на Gentle Contact.",
+    analysisDe: "Im Gentle-Contact-Modus vermeidet Yarbo Hindernisse basierend auf physischem Kontakt, und das Video zeigt, dass die Kollision tatsächlich registriert wird. Die Frage ist: Warum funktioniert dieser Vermeidungsmodus während eines normalen Arbeitsplans in diesem Bereich einwandfrei, verursacht aber bei der Rückkehr zur Ladestation ein anormales Verhalten? Der Grund ist, dass der Pfosten direkt auf dem Pathway liegt und die Rückroute nur diesen einen Weg hat, sodass Yarbo immer wieder mit demselben Hindernis kollidiert.",
+    analysisFr: "En mode Gentle Contact, Yarbo évite les obstacles en fonction du contact physique, et la vidéo montre qu'il enregistre bien la collision. La question est : pourquoi ce mode d'évitement fonctionne-t-il bien pendant un plan de travail normal dans cette zone, mais provoque un comportement anormal lors du retour à la station de charge ? La raison est que le poteau se trouve directement sur le pathway, et l'itinéraire de retour ne dispose que de ce seul chemin, donc Yarbo continue de percuter le même obstacle.",
+    analysisIt: "In modalità Gentle Contact, Yarbo evita gli ostacoli basandosi sul contatto fisico, e il video mostra che registra effettivamente la collisione. La domanda è: perché questa modalità di evitamento funziona bene durante un normale piano di lavoro in quest'area, ma causa un comportamento anomalo durante il rientro alla stazione di ricarica? Il motivo è che il palo si trova esattamente sul pathway, e il percorso di rientro ha solo questa strada disponibile, quindi Yarbo continua a scontrarsi con lo stesso ostacolo.",
+    analysisRu: "В режиме Gentle Contact Yarbo избегает препятствий на основе физического контакта, и видео показывает, что столкновение действительно регистрируется. Вопрос в том, почему этот режим объезда прекрасно работает во время обычного плана работы в этой зоне, но вызывает аномальное поведение при возвращении на зарядную станцию? Причина в том, что столб находится прямо на pathway, а на обратном пути есть только этот единственный путь, поэтому Yarbo продолжает сталкиваться с одним и тем же препятствием.",
+    solutionDe: "Den Pfosten als No-Go Zone einzeichnen oder die visuelle Hindernisvermeidung des Geräts aktivieren.",
+    solutionFr: "Dessiner le poteau comme une No-Go Zone, ou activer l'évitement d'obstacles visuel sur l'appareil.",
+    solutionIt: "Disegnare il palo come No-Go Zone, oppure attivare l'evitamento visivo degli ostacoli sul dispositivo.",
+    solutionRu: "Обозначьте столб как No-Go Zone или включите на устройстве визуальный объезд препятствий."
   },
   {
     id: "case-rtk-components",
@@ -1645,7 +2821,23 @@ const CASES = [
     solutionEn: "Use this logic to first locate the left/right side, then combine specific values with cross-verification to judge whether the fault is external or internal to the antenna (see the \u201cInternal RTK Extension Antenna Issue\u201d case below for reference).",
     solutionJa: "このロジックでまず左右を特定し、具体的な数値とクロス検証を組み合わせて、故障がアンテナの外部か内部かを判断してください（下記の「内部 RTK 延長アンテナの問題」の事例も参考にしてください）。",
     solutionKo: "이 로직으로 먼저 좌우를 파악한 후, 구체적인 수치와 교차 검증을 결합해 안테나 외부 문제인지 내부 문제인지 판단하세요(아래 \u201c내부 RTK 연장 안테나 문제\u201d 사례 참고).",
-    images: ["assets/case-media/case3-rtk-components.png"]
+    images: ["assets/case-media/case3-rtk-components.png"],
+    titleDe: "RTK-Komponenten und Antennen-Diagnoselogik",
+    titleFr: "Composants RTK et logique de diagnostic d'antenne",
+    titleIt: "Componenti RTK e logica di diagnosi dell'antenna",
+    titleRu: "Компоненты RTK и логика диагностики антенны",
+    problemDe: "In Diagnose Tools weist ein status ungleich 4 auf ein Problem mit der linken Antenne hin; ist L2 keine positive Zahl, deutet dies auf ein Problem mit der rechten Antenne hin. Ob der Fehler intern oder extern ist, muss anhand der konkreten Werte plus Kreuzprüfung beurteilt werden.",
+    problemFr: "Dans Diagnose Tools, un statut différent de 4 indique un problème avec l'antenne gauche ; si L2 n'est pas un nombre positif, cela indique un problème avec l'antenne droite. Il faut déterminer si le défaut est interne ou externe à partir des valeurs spécifiques et d'une vérification croisée.",
+    problemIt: "In Diagnose Tools, uno status diverso da 4 indica un problema con l'antenna sinistra; se L2 non è un numero positivo, indica un problema con l'antenna destra. Se il guasto sia interno o esterno va valutato in base ai valori specifici e alla verifica incrociata.",
+    problemRu: "В Diagnose Tools статус, не равный 4, указывает на проблему с левой антенной; если L2 не является положительным числом, это указывает на проблему с правой антенной. Является ли неисправность внутренней или внешней, нужно определять по конкретным значениям в сочетании с перекрёстной проверкой.",
+    analysisDe: "RTK besteht aus drei Teilen: der RTK Antenna selbst, dem Dual-side Flexible Antenna Stand und dem Internal RTK Extension Cable. Ein Fehler in einem dieser drei Teile zeigt sich in den status- oder L2-Werten. Zuerst feststellen, ob es die linke oder rechte Seite betrifft, dann anhand der konkreten Werte beurteilen, ob der Fehler in der Antenne selbst, im Stand oder im internen Verlängerungskabel liegt.",
+    analysisFr: "Le RTK est composé de trois parties : l'antenne RTK elle-même, le Dual-side Flexible Antenna Stand et le câble d'extension RTK interne. Un défaut dans l'une de ces trois parties se reflète dans les valeurs de statut ou de L2. Déterminer d'abord s'il s'agit du côté gauche ou droit, puis utiliser les valeurs spécifiques pour juger si le défaut se situe dans l'antenne elle-même, le support ou le câble d'extension interne.",
+    analysisIt: "L'RTK è composto da tre parti: l'antenna RTK stessa, il Dual-side Flexible Antenna Stand e il cavo di prolunga RTK interno. Un guasto in una qualsiasi di queste tre parti si riflette nei valori di status o L2, quindi determinare prima se riguarda il lato sinistro o destro, poi usare i valori specifici per giudicare se il guasto è nell'antenna stessa, nel supporto o nel cavo di prolunga interno.",
+    analysisRu: "RTK состоит из трёх частей: самой антенны RTK, Dual-side Flexible Antenna Stand и внутреннего удлинительного кабеля RTK. Неисправность любой из этих трёх частей отражается в значениях status или L2, поэтому сначала определите, левая это сторона или правая, а затем по конкретным значениям определите, находится ли неисправность в самой антенне, в стойке или во внутреннем удлинительном кабеле.",
+    solutionDe: "Mit dieser Logik zuerst die linke/rechte Seite lokalisieren, dann konkrete Werte mit Kreuzprüfung kombinieren, um zu beurteilen, ob der Fehler außerhalb oder innerhalb der Antenne liegt (siehe unten den Fall „Internes RTK-Verlängerungsantennenproblem“ zur Orientierung).",
+    solutionFr: "Utiliser cette logique pour d'abord localiser le côté gauche/droit, puis combiner des valeurs spécifiques avec une vérification croisée pour juger si le défaut est externe ou interne à l'antenne (voir le cas « Problème d'antenne d'extension RTK interne » ci-dessous pour référence).",
+    solutionIt: "Utilizzare questa logica per localizzare prima il lato sinistro/destro, quindi combinare valori specifici con la verifica incrociata per giudicare se il guasto è esterno o interno all'antenna (vedere di seguito il caso \"Problema dell'antenna di prolunga RTK interna\" come riferimento).",
+    solutionRu: "Используя эту логику, сначала определите левую/правую сторону, затем сочетайте конкретные значения с перекрёстной проверкой, чтобы понять, находится ли неисправность снаружи или внутри антенны (см. ниже случай «Проблема с внутренней удлинительной антенной RTK» для справки)."
   },
   {
     id: "case-internal-rtk-antenna",
@@ -1666,7 +2858,23 @@ const CASES = [
     solutionEn: "Left-side data affects right-side data, so replacing only the left side doesn't guarantee the right side is fine — replace both sides at once: the Dual-side Flexible Antenna Stand and the Internal RTK Extension Cable.",
     solutionJa: "左側のデータは右側のデータに影響するため、左側だけ交換しても右側に問題がないとは保証できません。そのため両側とも交換します：Dual-side Flexible Antenna Stand と Internal RTK Extension Cable。",
     solutionKo: "왼쪽 데이터가 오른쪽 데이터에 영향을 주므로 왼쪽만 교체해서는 오른쪽에 문제가 없다고 보장할 수 없습니다. 따라서 양쪽을 동시에 교체합니다: Dual-side Flexible Antenna Stand와 Internal RTK Extension Cable。",
-    images: ["assets/case-media/case4-rtk-panel.png", "assets/case-media/case4-yard-photo.png"]
+    images: ["assets/case-media/case4-rtk-panel.png", "assets/case-media/case4-yard-photo.png"],
+    titleDe: "Internes RTK-Verlängerungsantennenproblem",
+    titleFr: "Problème d'antenne d'extension RTK interne",
+    titleIt: "Problema dell'antenna di prolunga RTK interna",
+    titleRu: "Проблема с внутренней удлинительной антенной RTK",
+    problemDe: "Der Kunde meldete, dass Yarbo während eines Arbeitsplans die Grenze überschreitet, das GPS rot wird und die Abweichung 99,9 Meter erreicht. Ein harter Neustart behebt das Problem, und das Gerät läuft nach dem erneuten Einschalten eine Weile normal, aber das gleiche Problem tritt bald wieder auf. Zunächst den RTK-Status prüfen: Der Screenshot zeigt sowohl status als auch L2 bei 0.",
+    problemFr: "Le client a signalé que Yarbo sort des limites pendant un plan de travail, avec le GPS qui devient rouge et une dérive atteignant 99,9 mètres. Un redémarrage forcé résout le problème, et l'appareil fonctionne normalement pendant un moment après la remise sous tension, mais le même problème réapparaît rapidement. Vérifier d'abord le statut RTK : la capture d'écran montre à la fois le statut et L2 à 0.",
+    problemIt: "Il cliente ha segnalato che Yarbo esce dal confine durante un piano di lavoro, con il GPS che diventa rosso e la deriva che raggiunge 99,9 metri. Un riavvio forzato risolve il problema, e il dispositivo funziona normalmente per un po' dopo la riaccensione, ma lo stesso problema si ripresenta presto. Verificare prima lo stato RTK: lo screenshot mostra sia lo status che L2 a 0.",
+    problemRu: "Клиент сообщил, что Yarbo выходит за границу во время выполнения плана работы, GPS становится красным, а отклонение достигает 99,9 метра. Принудительная перезагрузка устраняет проблему, и устройство некоторое время работает нормально после повторного включения, но вскоре та же проблема повторяется. Сначала проверьте статус RTK: на скриншоте и status, и L2 равны 0.",
+    analysisDe: "Da der Kunde sagt, dass sich das Problem behebt, bedeutet dies, dass status zuvor 4 war und L2 positiv war — daher können eine beschädigte oder lockere RTK Antenna ausgeschlossen werden. Die RTK-Komponenten außerhalb des Core sind in Ordnung, also muss der Fehler intern sein.",
+    analysisFr: "Puisque le client dit que le problème se résout, cela signifie que le statut a été à 4 et que L2 a été positif auparavant — on peut donc écarter un dommage ou un desserrage de l'antenne RTK. Les composants RTK externes au Core sont corrects, donc le défaut doit être interne.",
+    analysisIt: "Poiché il cliente dice che si risolve, significa che lo status è stato 4 e L2 è stato positivo in precedenza, quindi si può escludere un danno o un allentamento dell'antenna RTK. I componenti RTK esterni al Core sono a posto, quindi il guasto deve essere interno.",
+    analysisRu: "Поскольку клиент говорит, что проблема устраняется, это означает, что статус ранее был равен 4, а L2 был положительным — значит, повреждение или ослабление антенны RTK можно исключить. Компоненты RTK вне Core в порядке, значит, неисправность должна быть внутренней.",
+    solutionDe: "Daten der linken Seite beeinflussen die Daten der rechten Seite, daher garantiert ein Austausch nur der linken Seite nicht, dass die rechte Seite in Ordnung ist — beide Seiten gleichzeitig austauschen: den Dual-side Flexible Antenna Stand und das Internal RTK Extension Cable.",
+    solutionFr: "Les données du côté gauche affectent les données du côté droit, donc remplacer uniquement le côté gauche ne garantit pas que le côté droit soit correct — remplacer les deux côtés en même temps : le Dual-side Flexible Antenna Stand et l'Internal RTK Extension Cable.",
+    solutionIt: "I dati del lato sinistro influenzano i dati del lato destro, quindi sostituire solo il lato sinistro non garantisce che il lato destro sia a posto: sostituire entrambi i lati contemporaneamente: il Dual-side Flexible Antenna Stand e l'Internal RTK Extension Cable.",
+    solutionRu: "Данные левой стороны влияют на данные правой стороны, поэтому замена только левой стороны не гарантирует исправность правой — замените обе стороны одновременно: Dual-side Flexible Antenna Stand и Internal RTK Extension Cable."
   },
   {
     id: "case-ntrip-fail",
@@ -1687,6 +2895,22 @@ const CASES = [
     solutionEn: "Have the user tighten the left antenna, or unscrew it, dry out any moisture inside, and screw it back on.",
     solutionJa: "ユーザーに左側アンテナを締め直してもらうか、一度外して内部の水分を拭き取ってから取り付け直してもらってください。",
     solutionKo: "사용자에게 왼쪽 안테나를 조이거나, 분리하여 내부 물기를 닦아낸 후 다시 조립하도록 안내하세요.",
-    images: ["assets/case-media/case5-rtk-panel.png"]
+    images: ["assets/case-media/case5-rtk-panel.png"],
+    titleDe: "Verbindung zu Ntrip schlägt fehl",
+    titleFr: "Échec de connexion à Ntrip",
+    titleIt: "Impossibile connettersi a Ntrip",
+    titleRu: "Не удаётся подключиться к Ntrip",
+    problemDe: "Dieses Gerät stellt keine Verbindung zu Ntrip her. Es befindet sich in dem Bereich, in dem sich andere Geräte verbinden, sodass der Standort korrekt ist. Könnten Sie bitte die Ursache untersuchen und Verbesserungen vornehmen?",
+    problemFr: "Cet appareil ne se connecte pas à Ntrip. Il se trouve dans la zone où d'autres appareils se connectent, donc l'emplacement est correct. Pourriez-vous s'il vous plaît étudier la cause et apporter des améliorations ?",
+    problemIt: "Questa unità non si connette a Ntrip. Si trova nell'area in cui altre unità si connettono, quindi la posizione è corretta. Potreste indagare sulla causa e apportare miglioramenti?",
+    problemRu: "Это устройство не подключается к Ntrip. Оно находится в зоне, где подключаются другие устройства, значит, расположение верное. Не могли бы вы выяснить причину и внести улучшения?",
+    analysisDe: "Der erste Verdacht ist, dass die RTK Antenna nicht richtig festgezogen ist oder Wasser in die Antenne eingedrungen ist.",
+    analysisFr: "Le premier soupçon est que l'antenne RTK n'est pas correctement serrée, ou que de l'eau s'est infiltrée à l'intérieur de l'antenne.",
+    analysisIt: "Il primo sospetto è che l'antenna RTK non sia stretta correttamente, oppure che sia entrata acqua all'interno dell'antenna.",
+    analysisRu: "Первое подозрение — антенна RTK неплотно затянута или внутрь антенны попала вода.",
+    solutionDe: "Den Nutzer bitten, die linke Antenne festzuziehen oder sie abzuschrauben, die Feuchtigkeit im Inneren zu trocknen und sie wieder aufzuschrauben.",
+    solutionFr: "Demander à l'utilisateur de serrer l'antenne gauche, ou de la dévisser, de sécher toute humidité à l'intérieur, puis de la revisser.",
+    solutionIt: "Chiedere all'utente di stringere l'antenna sinistra, oppure di svitarla, asciugare eventuale umidità all'interno e riavvitarla.",
+    solutionRu: "Попросите пользователя затянуть левую антенну или открутить её, высушить влагу внутри и закрутить обратно."
   }
 ];

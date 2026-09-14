@@ -13,11 +13,12 @@
     videoOpen: new Set(), // Set(openVideoModuleIds)
     caseOpen: new Set(), // Set(openCaseStudyIds)
     caseFilters: new Set(), // Set(selectedCaseTagKeywords)
+    introExamplesOpen: false,
   };
 
   function t(key) { return UI[state.lang][key]; }
-  function tx(zh, en, ja, ko) {
-    const map = { zh, en, ja, ko };
+  function tx(zh, en, ja, ko, de, fr, it, ru) {
+    const map = { zh, en, ja, ko, de, fr, it, ru };
     const val = map[state.lang];
     return val !== undefined && val !== null ? val : (en !== undefined ? en : zh);
   }
@@ -202,8 +203,8 @@
       ["updates", t("navUpdates")]
     ];
     const currentTop = (location.hash.replace("#", "").split("/")[0]) || "intro";
-    const langLabels = { zh: "中文", en: "EN", ja: "日本語", ko: "한국어" };
-    const langs = ["zh", "en", "ja", "ko"];
+    const langLabels = { zh: "中文", en: "EN", ja: "日本語", ko: "한국어", de: "Deutsch", fr: "Français", it: "Italiano", ru: "Русский" };
+    const langs = ["zh", "en", "ja", "ko", "de", "fr", "it", "ru"];
 
     el.innerHTML = `
       <div class="header-inner">
@@ -242,7 +243,7 @@
       btn.addEventListener("click", () => {
         state.lang = btn.dataset.lang;
         localStorage.setItem("yarbo_lang", state.lang);
-        document.documentElement.lang = { zh: "zh-CN", en: "en", ja: "ja", ko: "ko" }[state.lang] || "en";
+        document.documentElement.lang = { zh: "zh-CN", en: "en", ja: "ja", ko: "ko", de: "de", fr: "fr", it: "it", ru: "ru" }[state.lang] || "en";
         renderHeader();
         route();
       });
@@ -297,7 +298,7 @@
             <button class="search-result-item" data-goto="videos/${encodeURIComponent(mod.id)}/${encodeURIComponent(item.id)}">
               <div class="search-result-kind">${t("navVideos")}</div>
               <div class="search-result-title">${escapeHtml(title)}</div>
-              <div class="search-result-path">${escapeHtml(tx(mod.zh, mod.en, mod.ja, mod.ko))}</div>
+              <div class="search-result-path">${escapeHtml(tx(mod.zh, mod.en, mod.ja, mod.ko, mod.de, mod.fr, mod.it, mod.ru))}</div>
             </button>`;
         }).join("");
       } else if (currentPage === "updates") {
@@ -305,7 +306,7 @@
         html = updateMatches.map((u) => `
           <button class="search-result-item" data-goto="updates/${encodeURIComponent(u.id)}">
             <div class="search-result-kind">${t("navUpdates")}</div>
-            <div class="search-result-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo))}</div>
+            <div class="search-result-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo, u.titleDe, u.titleFr, u.titleIt, u.titleRu))}</div>
           </button>`).join("");
       } else {
         // Troubleshooting (including error codes and case studies), Introduction, and
@@ -326,8 +327,8 @@
           return `
           <button class="search-result-item" data-goto="troubleshoot/${n.categoryId}/mindmap/${gotoPath.join(".")}">
             <div class="search-result-kind">${t("navTrouble")}</div>
-            <div class="search-result-title">${escapeHtml(tx(n.node.zh, n.node.en, n.node.ja, n.node.ko))}</div>
-            <div class="search-result-path">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko))}</div>
+            <div class="search-result-title">${escapeHtml(tx(n.node.zh, n.node.en, n.node.ja, n.node.ko, n.node.de, n.node.fr, n.node.it, n.node.ru))}</div>
+            <div class="search-result-path">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko, cat.de, cat.fr, cat.it, cat.ru))}</div>
           </button>`;
         }).join("");
 
@@ -363,7 +364,7 @@
   function renderIntro() {
     const c = INTRO_CONTENT[state.lang];
 
-    const sep = { zh: "：", en: ": ", ja: "：", ko: ": " }[state.lang] || ": ";
+    const sep = { zh: "：", en: ": ", ja: "：", ko: ": ", de: ": ", fr: " : ", it: ": ", ru: ": " }[state.lang] || ": ";
     const problemItems = c.problemTypes.items.map((it) => `
       <li><strong>${escapeHtml(it.label)}${sep}</strong>${escapeHtml(it.text)}</li>
     `).join("");
@@ -384,6 +385,17 @@
       </div>
     `).join("");
 
+    const exampleBlocks = (c.problemTypes.examples || []).map((ex) => `
+      <div class="intro-example-block">
+        <p class="intro-example-question">${escapeHtml(ex.question)}</p>
+        <p class="intro-example-answer">${escapeHtml(ex.answer)}</p>
+        ${ex.extra ? `<p class="intro-example-answer">${escapeHtml(ex.extra)}</p>` : ""}
+        ${ex.images ? `<div class="case-card-images">${ex.images.map((src) => `<img class="case-image" src="${src}" alt="" loading="lazy" />`).join("")}</div>` : ""}
+      </div>
+    `).join("");
+
+    const examplesOpen = !!state.introExamplesOpen;
+
     return `
       <div class="page">
         <div class="hero">
@@ -392,8 +404,12 @@
         </div>
 
         <div class="intro-section">
-          <h2 class="intro-heading">${escapeHtml(c.problemTypes.heading)}</h2>
+          <h2 class="intro-heading">
+            ${escapeHtml(c.problemTypes.heading)}
+            ${c.problemTypes.examples ? `<button class="intro-examples-toggle ${examplesOpen ? "is-open" : ""}" id="intro-examples-toggle">${escapeHtml(c.problemTypes.examplesLabel)} ${ICONS.chevron}</button>` : ""}
+          </h2>
           <ul class="intro-list intro-list-labeled">${problemItems}</ul>
+          ${c.problemTypes.examples && examplesOpen ? `<div class="intro-examples-panel">${exampleBlocks}</div>` : ""}
         </div>
 
         <div class="intro-section intro-callout">
@@ -475,8 +491,8 @@
       <div class="category-grid">
         ${TREE.map((cat) => `
           <button class="category-card" data-cat="${cat.id}">
-            <p class="category-card-title">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko))}</p>
-            <p class="category-card-meta">${(cat.children || []).length} ${tx("个分支", "branches", "分岐", "개 분기")}</p>
+            <p class="category-card-title">${escapeHtml(tx(cat.zh, cat.en, cat.ja, cat.ko, cat.de, cat.fr, cat.it, cat.ru))}</p>
+            <p class="category-card-meta">${(cat.children || []).length} ${tx("个分支", "branches", "分岐", "개 분기", "Zweige", "branches", "rami", "ветвей")}</p>
           </button>
         `).join("")}
       </div>
@@ -516,14 +532,14 @@
 
     const cards = filtered.length ? filtered.map((c) => {
       const isOpen = state.caseOpen.has(c.id);
-      const problem = tx(c.problemZh, c.problemEn, c.problemJa, c.problemKo);
-      const analysis = tx(c.analysisZh, c.analysisEn, c.analysisJa, c.analysisKo);
-      const solution = tx(c.solutionZh, c.solutionEn, c.solutionJa, c.solutionKo);
+      const problem = tx(c.problemZh, c.problemEn, c.problemJa, c.problemKo, c.problemDe, c.problemFr, c.problemIt, c.problemRu);
+      const analysis = tx(c.analysisZh, c.analysisEn, c.analysisJa, c.analysisKo, c.analysisDe, c.analysisFr, c.analysisIt, c.analysisRu);
+      const solution = tx(c.solutionZh, c.solutionEn, c.solutionJa, c.solutionKo, c.solutionDe, c.solutionFr, c.solutionIt, c.solutionRu);
       return `
         <div class="case-card ${isOpen ? "is-open" : ""}">
           <button class="case-card-header" data-case-toggle="${c.id}">
             <div class="case-card-heading">
-              <h3 class="case-card-title">${escapeHtml(tx(c.titleZh, c.titleEn, c.titleJa, c.titleKo))}</h3>
+              <h3 class="case-card-title">${escapeHtml(tx(c.titleZh, c.titleEn, c.titleJa, c.titleKo, c.titleDe, c.titleFr, c.titleIt, c.titleRu))}</h3>
               <p class="case-card-problem">${escapeHtml(problem)}</p>
               ${renderImages(c)}
             </div>
@@ -577,7 +593,7 @@
     function renderLeafResult(node, ancestorTexts) {
       const tagClass = node.escalate ? "escalate" : (node.resolved ? "resolved" : "neutral");
       const tagLabel = node.escalate ? t("escalateTag") : (node.resolved ? t("resolvedTag") : t("infoTag"));
-      const text = tx(node.zh, node.en, node.ja, node.ko);
+      const text = tx(node.zh, node.en, node.ja, node.ko, node.de, node.fr, node.it, node.ru);
       const copyPayload = ancestorTexts.concat([text]).join(" > ");
       return `
         <div class="qa-result ${tagClass} mm-leaf-result">
@@ -601,9 +617,9 @@
         : node.resolved
           ? `<span class="mm-tag resolved">${t("resolvedTag")}</span>`
           : "";
-      const detail = tx(node.detailZh, node.detailEn, node.detailJa, node.detailKo);
+      const detail = tx(node.detailZh, node.detailEn, node.detailJa, node.detailKo, node.detailDe, node.detailFr, node.detailIt, node.detailRu);
       const toggleAttr = hasChildren ? `data-toggle="${node.id}"` : `data-toggle-leaf="${node.id}"`;
-      const nodeText = tx(node.zh, node.en, node.ja, node.ko);
+      const nodeText = tx(node.zh, node.en, node.ja, node.ko, node.de, node.fr, node.it, node.ru);
       return `
         <div class="mm-node" id="mm-node-${node.id}">
           <div class="mm-node-row">
@@ -623,8 +639,8 @@
       `;
     }
 
-    const rootDetail = tx(cat.detailZh, cat.detailEn, cat.detailJa, cat.detailKo);
-    const rootText = tx(cat.zh, cat.en, cat.ja, cat.ko);
+    const rootDetail = tx(cat.detailZh, cat.detailEn, cat.detailJa, cat.detailKo, cat.detailDe, cat.detailFr, cat.detailIt, cat.detailRu);
+    const rootText = tx(cat.zh, cat.en, cat.ja, cat.ko, cat.de, cat.fr, cat.it, cat.ru);
 
     return `
       <div class="mindmap" id="mindmap-root">
@@ -657,7 +673,7 @@
     const breadcrumb = `<div class="qa-breadcrumb">${chain.map((n, i) => {
       const isCurrent = i === chain.length - 1;
       const crumbPath = path.slice(0, i).join(".");
-      return `<button type="button" class="qa-breadcrumb-item ${isCurrent ? "current" : ""}" data-path="${crumbPath}">${escapeHtml(tx(n.zh, n.en, n.ja, n.ko))}</button>`;
+      return `<button type="button" class="qa-breadcrumb-item ${isCurrent ? "current" : ""}" data-path="${crumbPath}">${escapeHtml(tx(n.zh, n.en, n.ja, n.ko, n.de, n.fr, n.it, n.ru))}</button>`;
     }).join("")}</div>`;
 
     const isLeaf = !cur.children || !cur.children.length;
@@ -665,8 +681,8 @@
     if (isLeaf) {
       const tagClass = cur.escalate ? "escalate" : (cur.resolved ? "resolved" : "neutral");
       const tagLabel = cur.escalate ? t("escalateTag") : (cur.resolved ? t("resolvedTag") : t("infoTag"));
-      const detail = tx(cur.detailZh, cur.detailEn, cur.detailJa, cur.detailKo) || tx(cur.zh, cur.en, cur.ja, cur.ko);
-      const copyPayload = [tx(cat.zh, cat.en, cat.ja, cat.ko)].concat(chain.slice(1).map((n) => tx(n.zh, n.en, n.ja, n.ko))).join(" > ") + "\n\n" + detail;
+      const detail = tx(cur.detailZh, cur.detailEn, cur.detailJa, cur.detailKo, cur.detailDe, cur.detailFr, cur.detailIt, cur.detailRu) || tx(cur.zh, cur.en, cur.ja, cur.ko, cur.de, cur.fr, cur.it, cur.ru);
+      const copyPayload = [tx(cat.zh, cat.en, cat.ja, cat.ko, cat.de, cat.fr, cat.it, cat.ru)].concat(chain.slice(1).map((n) => tx(n.zh, n.en, n.ja, n.ko, n.de, n.fr, n.it, n.ru))).join(" > ") + "\n\n" + detail;
       return `
         <div class="qa-card">
           ${breadcrumb}
@@ -684,19 +700,19 @@
       `.replace("<script></script>", "") + `<div data-copy-payload="${encodeURIComponent(copyPayload)}" id="qa-copy-payload" style="display:none"></div>`;
     }
 
-    const detail = tx(cur.detailZh, cur.detailEn, cur.detailJa, cur.detailKo);
+    const detail = tx(cur.detailZh, cur.detailEn, cur.detailJa, cur.detailKo, cur.detailDe, cur.detailFr, cur.detailIt, cur.detailRu);
     return `
       <div class="qa-card">
         ${breadcrumb}
         <p class="qa-step">${t("qaStepOf")} ${chain.length}</p>
-        <h2 class="qa-question">${escapeHtml(tx(cur.zh, cur.en, cur.ja, cur.ko))}</h2>
+        <h2 class="qa-question">${escapeHtml(tx(cur.zh, cur.en, cur.ja, cur.ko, cur.de, cur.fr, cur.it, cur.ru))}</h2>
         ${detail ? `<p class="qa-detail">${escapeHtml(detail)}</p>` : ""}
         <div class="qa-options">
           ${cur.children.length === 1
-            ? `<button class="qa-single-next" data-path="${path.concat(cur.children[0].id).join(".")}">${escapeHtml(tx(cur.children[0].zh, cur.children[0].en, cur.children[0].ja, cur.children[0].ko))}${ICONS.arrow}</button>`
+            ? `<button class="qa-single-next" data-path="${path.concat(cur.children[0].id).join(".")}">${escapeHtml(tx(cur.children[0].zh, cur.children[0].en, cur.children[0].ja, cur.children[0].ko, cur.children[0].de, cur.children[0].fr, cur.children[0].it, cur.children[0].ru))}${ICONS.arrow}</button>`
             : cur.children.map((c) => `
                 <button class="qa-option" data-path="${path.concat(c.id).join(".")}">
-                  <span>${escapeHtml(tx(c.zh, c.en, c.ja, c.ko))}</span>
+                  <span>${escapeHtml(tx(c.zh, c.en, c.ja, c.ko, c.de, c.fr, c.it, c.ru))}</span>
                   ${ICONS.arrow}
                 </button>
               `).join("")
@@ -720,7 +736,7 @@
         </div>
         <div class="code-grid">
           ${ERROR_CODES.map((c) => {
-            const steps = tx(c.stepsZh, c.stepsEn, c.stepsJa, c.stepsKo);
+            const steps = tx(c.stepsZh, c.stepsEn, c.stepsJa, c.stepsKo, c.stepsDe, c.stepsFr, c.stepsIt, c.stepsRu);
             const copyPayload = `${c.code}\n` + steps.map((s, i) => `${i + 1}. ${s}`).join("\n");
             const isHighlight = highlight && norm(highlight) === norm(c.code);
             return `
@@ -753,7 +769,7 @@
 
     function renderLink(link) {
       const label = LINK_LABEL[link.type] || link.type;
-      const note = link.note ? ` (${tx(link.note.zh, link.note.en, link.note.ja, link.note.ko)})` : "";
+      const note = link.note ? ` (${tx(link.note.zh, link.note.en, link.note.ja, link.note.ko, link.note.de, link.note.fr, link.note.it, link.note.ru)})` : "";
       if (!link.url) {
         return `<span class="video-link video-link-disabled">${label}${escapeHtml(note)}</span>`;
       }
@@ -765,8 +781,8 @@
       if (!item.links.length) return `${title}\n(${t("linkPending")})`;
       const linkLines = item.links.map((l) => {
         const label = LINK_LABEL[l.type] || l.type;
-        const note = l.note ? ` (${tx(l.note.zh, l.note.en, l.note.ja, l.note.ko)})` : "";
-        return l.url ? `${label}: ${l.url}${note}` : `${label}: ${tx("链接见共享文件夹", "link in shared folder", "共有フォルダ内のリンクをご確認ください", "링크는 공유 폴더를 확인하세요")}${note}`;
+        const note = l.note ? ` (${tx(l.note.zh, l.note.en, l.note.ja, l.note.ko, l.note.de, l.note.fr, l.note.it, l.note.ru)})` : "";
+        return l.url ? `${label}: ${l.url}${note}` : `${label}: ${tx("链接见共享文件夹", "link in shared folder", "共有フォルダ内のリンクをご確認ください", "링크는 공유 폴더를 확인하세요", "Link im freigegebenen Ordner", "lien dans le dossier partagé", "link nella cartella condivisa", "ссылка в общей папке")}${note}`;
       });
       return [title].concat(linkLines).join("\n");
     }
@@ -794,7 +810,7 @@
       return `
         <div class="video-module">
           <button class="video-module-header ${isOpen ? "is-open" : ""}" data-video-toggle="${mod.id}">
-            <span class="video-module-title">${escapeHtml(tx(mod.zh, mod.en, mod.ja, mod.ko))}</span>
+            <span class="video-module-title">${escapeHtml(tx(mod.zh, mod.en, mod.ja, mod.ko, mod.de, mod.fr, mod.it, mod.ru))}</span>
             <span class="video-module-count">${mod.items.length}</span>
             ${ICONS.chevron}
           </button>
@@ -820,7 +836,7 @@
     if (!UPDATES.length) return renderEmptyPage("navUpdates", "emptyUpdates");
 
     const cards = UPDATES.map((u) => {
-      const changes = tx(u.changesZh, u.changesEn, u.changesJa, u.changesKo);
+      const changes = tx(u.changesZh, u.changesEn, u.changesJa, u.changesKo, u.changesDe, u.changesFr, u.changesIt, u.changesRu);
       const copyPayload = [
         `${u.titleZh} / ${u.titleEn}`,
         `${t("firmwareVersion")}: ${u.firmwareVersion}`,
@@ -834,8 +850,8 @@
         <div class="update-card" id="update-${u.id}">
           <div class="update-card-head">
             <div>
-              <h3 class="update-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo))}</h3>
-              <span class="update-tag">${escapeHtml(tx(u.tagZh, u.tagEn, u.tagJa, u.tagKo))}</span>
+              <h3 class="update-title">${escapeHtml(tx(u.titleZh, u.titleEn, u.titleJa, u.titleKo, u.titleDe, u.titleFr, u.titleIt, u.titleRu))}</h3>
+              <span class="update-tag">${escapeHtml(tx(u.tagZh, u.tagEn, u.tagJa, u.tagKo, u.tagDe, u.tagFr, u.tagIt, u.tagRu))}</span>
             </div>
             <button class="copy-btn" data-copy="${encodeURIComponent(copyPayload)}" data-label="${t("copyLinks")}">${t("copyLinks")}</button>
           </div>
@@ -1062,6 +1078,15 @@
       });
     });
 
+    // intro "examples" toggle
+    const introExamplesToggle = document.getElementById("intro-examples-toggle");
+    if (introExamplesToggle) {
+      introExamplesToggle.addEventListener("click", () => {
+        state.introExamplesOpen = !state.introExamplesOpen;
+        route(true);
+      });
+    }
+
     const caseFilterClear = document.getElementById("case-filter-clear");
     if (caseFilterClear) {
       caseFilterClear.addEventListener("click", () => {
@@ -1136,7 +1161,7 @@
   /* ---------- init ---------- */
 
   document.addEventListener("DOMContentLoaded", () => {
-    document.documentElement.lang = { zh: "zh-CN", en: "en", ja: "ja", ko: "ko" }[state.lang] || "en";
+    document.documentElement.lang = { zh: "zh-CN", en: "en", ja: "ja", ko: "ko", de: "de", fr: "fr", it: "it", ru: "ru" }[state.lang] || "en";
     buildIndex();
     renderHeader();
     route();
