@@ -293,7 +293,7 @@
       if (currentPage === "videos") {
         const videoMatches = searchVideos(q);
         html = videoMatches.map(({ mod, item }) => {
-          const title = [item.titleEn, item.titleZh].filter(Boolean).join(" · ");
+          const title = tx(item.titleZh, item.titleEn, item.titleJa, item.titleKo, item.titleDe, item.titleFr, item.titleIt, item.titleRu);
           return `
             <button class="search-result-item" data-goto="videos/${encodeURIComponent(mod.id)}/${encodeURIComponent(item.id)}">
               <div class="search-result-kind">${t("navVideos")}</div>
@@ -777,7 +777,7 @@
     }
 
     function copyPayloadFor(item) {
-      const title = [item.titleEn, item.titleZh].filter(Boolean).join(" / ");
+      const title = tx(item.titleZh, item.titleEn, item.titleJa, item.titleKo, item.titleDe, item.titleFr, item.titleIt, item.titleRu);
       if (!item.links.length) return `${title}\n(${t("linkPending")})`;
       const linkLines = item.links.map((l) => {
         const label = LINK_LABEL[l.type] || l.type;
@@ -788,7 +788,7 @@
     }
 
     function renderItem(item) {
-      const title = [item.titleEn, item.titleZh].filter(Boolean).join(" · ");
+      const title = tx(item.titleZh, item.titleEn, item.titleJa, item.titleKo, item.titleDe, item.titleFr, item.titleIt, item.titleRu);
       const links = item.links.length
         ? item.links.map(renderLink).join("")
         : `<span class="video-link video-link-pending">${t("linkPending")}</span>`;
